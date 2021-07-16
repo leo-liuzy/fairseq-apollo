@@ -133,3 +133,9 @@ dmypy.json
 *.iml
 *.sublime-project
 *.sublime-workspace
+data/**/*
+data-bin/**/*
+**/xlmr.base/*
+**/xlmr.large/*
+fairseq/data/**/*
+.DS_Store
