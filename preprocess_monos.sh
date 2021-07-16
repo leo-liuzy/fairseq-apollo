@@ -54,3 +54,4 @@ for lg in $lgs; do
     echo
     lg_count=$( expr $lg_count + 1 )
 done
+echo "Done"
