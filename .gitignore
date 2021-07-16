@@ -135,6 +135,7 @@ dmypy.json
 *.sublime-workspace
 data/**/*
 data-bin/**/*
+!data/*_debug
 **/xlmr.base/*
 **/xlmr.large/*
 fairseq/data/**/*
