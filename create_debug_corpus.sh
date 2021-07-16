@@ -14,8 +14,6 @@ mkdir -p ${debug_dir}
 mkdir -p ${debug_mono_dir}
 
 # Create debug corpus for monolingual data
-cp ${mono_dir}/*.test ${debug_mono_dir}/
-cp ${mono_dir}/*.valid ${debug_mono_dir}/
 
 N_TEST=1000
 split=test
@@ -24,7 +22,7 @@ for f in ${mono_dir}/*.${split}; do
     LG="${f%.$split}"  # trim extension
     LG="${LG#${mono_dir}/}" # trim path to source_dir
     echo "Processing ${LG}"
-    head -n $N_TEST $f > ${debug_mono_dir}/${LG}.$split
+    head -n $N_TEST $f > ${debug_mono_dir}/${split}.${LG}
 done
 echo
 
@@ -35,7 +33,7 @@ for f in ${mono_dir}/*.${split}; do
     LG="${f%.$split}"  # trim extension
     LG="${LG#${mono_dir}/}" # trim path to source_dir
     echo "Processing ${LG}"
-    head -n $N_VALID $f > ${debug_mono_dir}/${LG}.$split
+    head -n $N_VALID $f > ${debug_mono_dir}/${split}.${LG}
 done
 echo
 
@@ -46,6 +44,6 @@ for f in ${mono_dir}/*.${split}; do
     LG="${f%.$split}"  # trim extension
     LG="${LG#${mono_dir}/}" # trim path to source_dir
     echo "Processing ${LG}"
-    head -n $N_TRAIN $f > ${debug_mono_dir}/${LG}.$split
+    head -n $N_TRAIN $f > ${debug_mono_dir}/${split}.${LG}
 done
 
