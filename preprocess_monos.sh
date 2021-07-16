@@ -1,36 +1,56 @@
-lgs="en ru id vi de fi ja es fr ko zh-Hans bg th el ar tr hi bn ur te sw"
+lgs="en" # ru id vi de fi ja es fr ko zh-Hans bg th el ar tr hi bn ur te sw"
 DATA_DIR_ROOT="data"
 BIN_DATA_DIR_ROOT="data-bin"
-raw_input_dir="${DATA_DIR_ROOT}/raw_XLM_pilot_run_21Langs_debug"
-output_dir="${DATA_DIR_ROOT}/XLM_pilot_run_21Langs_debug"
-monolingual_dir="XLM_pilot_run_21Langs_debug/monolingual"
-tokenized_dir="${DATA_DIR_ROOT}/${monolingual_dir}"
-dict="${DATA_DIR_ROOT}/xlmr.base/dict.txt"
-destdir="${BIN_DATA_DIR_ROOT}/${monolingual_dir}"
+exp_name="XLM_pilot_run_21Langs_debug"
+raw_input_dir="raw_${exp_name}"
+tokenized_dir="tokenized_${exp_name}"
+
+corpus_type=monolingual
+
+raw_monolingual_dir="${raw_input_dir}/${corpus_type}"
+tokenized_monolingual_dir="${tokenized_dir}/${corpus_type}"
+mkdir -p ${DATA_DIR_ROOT}/${tokenized_monolingual_dir}
+
+dict_path="${DATA_DIR_ROOT}/xlmr.base/dict.txt"
+bin_destdir="${BIN_DATA_DIR_ROOT}/${exp_name}/${corpus_type}"
 task=mluna
 spm_path="${DATA_DIR_ROOT}/xlmr.base/sentencepiece.bpe.model"
 
 
-mkdir -p "$destdir"
+mkdir -p "$bin_destdir"
+
+lg_count=1
 
 for lg in $lgs; do
-    echo "Preprocessing ${lg}"
+    echo "Preprocessing ${lg} (Language ${lg_count})"
+
+    echo "Tokenizing...."
+    for split in train test valid; do
+        echo "Tokenizing ${lg}.${split}"
+        input=${DATA_DIR_ROOT}/${raw_monolingual_dir}/${split}.${lg}
+        output=${DATA_DIR_ROOT}/${tokenized_monolingual_dir}/${split}.${lg}
+        spm_encode --model=${spm_path} < "${input}" > "${output}"
+    done
+
+    echo "Binarizing...."
     fairseq-preprocess --task ${task} \
-    --source-lang ${lg} \
+    --source-lang "${lg}" \
     --only-source --bpe sentencepiece \
-    --trainpref ${tokenized_dir}/train \
-    --validpref ${tokenized_dir}/valid \
-    --testpref ${tokenized_dir}/test \
-    --srcdict $dict \
-    --destdir $destdir
+    --trainpref "${DATA_DIR_ROOT}/${tokenized_monolingual_dir}/train" \
+    --validpref "${DATA_DIR_ROOT}/${tokenized_monolingual_dir}/valid" \
+    --testpref "${DATA_DIR_ROOT}/${tokenized_monolingual_dir}/test" \
+    --srcdict $dict_path \
+    --destdir $bin_destdir
 
     # Since we only have a source language, the output file has a None for the
     # target language. Remove this
     for stage in train test valid; do
-      mv "$destdir/$stage.$lg-None.$lg.bin" "$destdir/$stage.$lg.bin"
-      mv "$destdir/$stage.$lg-None.$lg.idx" "$destdir/$stage.$lg.idx"
+      mv "$bin_destdir/$stage.$lg-None.$lg.bin" "$bin_destdir/$stage.$lg.bin"
+      mv "$bin_destdir/$stage.$lg-None.$lg.idx" "$bin_destdir/$stage.$lg.idx"
     done
     # we use sentencepiece, so dict is shared
-    mv "$destdir/dict.${lg}.txt" "$destdir/../dict.txt"
+    mv "$bin_destdir/dict.${lg}.txt" "$bin_destdir/../dict.txt"
     echo
+
+    lg_count=$( expr $lg_count + 1 )
 done

@@ -135,6 +135,7 @@ dmypy.json
 *.sublime-workspace
 # data/
 data/raw_XLM_pilot_run_21Langs/**
+data/xlm-roberta-base/
 data/para/**
 data-bin/**/*
 **/xlmr.base/*

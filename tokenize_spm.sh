@@ -7,7 +7,7 @@ input_dir="data/raw_XLM_pilot_run_21Langs_debug"
 output_dir="data/XLM_pilot_run_21Langs_debug"
 spm_path="data/xlmr.base/sentencepiece.bpe.model"
 
-lg_count=1
+  lg_count=1
 
 for lg in $lgs; do
     echo "Language ${lg_count}"
