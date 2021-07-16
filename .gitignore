@@ -133,9 +133,10 @@ dmypy.json
 *.iml
 *.sublime-project
 *.sublime-workspace
-data/**/*
+# data/
+data/raw_XLM_pilot_run_21Langs/**
+data/para/**
 data-bin/**/*
-!data/*_debug
 **/xlmr.base/*
 **/xlmr.large/*
 fairseq/data/**/*
