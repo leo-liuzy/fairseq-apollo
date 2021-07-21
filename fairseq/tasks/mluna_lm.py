@@ -33,15 +33,21 @@ from fairseq import utils
 logger = logging.getLogger(__name__)
 
 
-@register_task('mluna')
-class MLunaTask(FairseqTask):
+@register_task('mluna_lm')
+class MLunaLMTask(FairseqTask):
     """Task for training masked language models (e.g., BERT, RoBERTa)."""
 
     @staticmethod
     def add_args(parser):
         """Add task-specific arguments to the parser."""
-        parser.add_argument('data', help='colon separated path to data directories list, \
-                            will be iterated upon during epochs in round-robin manner')
+        parser.add_argument('--mono-data', required=True,
+                            help='colon separated path to monolingual data directories list, '
+                                 'will be iterated upon during epochs in round-robin manner')
+        parser.add_argument('--para-data', default=None,
+                            help='colon separated path to parallel data directories list,'
+                                 ' will be iterated upon during epochs in round-robin manner')
+        parser.add_argument('--langs', default=None,
+                            help='The amount of languages we include. colon separated')
         parser.add_argument('--sample-break-mode', default='complete',
                             choices=['none', 'complete', 'complete_doc', 'eos'],
                             help='If omitted or "none", fills each sample with tokens-per-sample '
@@ -72,10 +78,11 @@ class MLunaTask(FairseqTask):
 
         # add mask token
         self.mask_idx = dictionary.add_symbol('<mask>')
+        self.languages = utils.split_paths(self.args.langs)
 
     @classmethod
     def setup_task(cls, args, **kwargs):
-        paths = utils.split_paths(args.data)
+        paths = utils.split_paths(args.mono_data)
         assert len(paths) > 0
         dictionary = Dictionary.load(os.path.join(paths[0], 'dict.txt'))
         logger.info('dictionary: {} types'.format(len(dictionary)))
@@ -122,15 +129,28 @@ class MLunaTask(FairseqTask):
         Args:
             split (str): name of the split (e.g., train, valid, test)
         """
-        paths = utils.split_paths(self.args.data)
+        self._load_mono_dataset(split, epoch, combine, **kwargs)
+        if self.args.para_data:
+            self._load_para_dataset(split, epoch, combine, **kwargs)
+
+    def _load_para_dataset(self, split, epoch=1, combine=False, **kwargs):
+        pass
+
+    def _load_mono_dataset(self, split, epoch=1, combine=False, **kwargs):
+        """Load a given monolingual dataset split.
+
+        Args:
+            split (str): name of the split (e.g., train, valid, test)
+        """
+        paths = utils.split_paths(self.args.mono_data)
         assert len(paths) > 0
         data_path = paths[(epoch - 1) % len(paths)]
 
         languages = sorted(
-            name for name in os.listdir(data_path)
+            name for name in self.languages
             if os.path.isdir(os.path.join(data_path, name))
         )
-
+        assert len(languages) == len(self.languages)
         logger.info("Training on {0} languages: {1}".format(len(languages), languages))
         logger.info("Language to id mapping: ", {
                 lang: id for id, lang in enumerate(languages)

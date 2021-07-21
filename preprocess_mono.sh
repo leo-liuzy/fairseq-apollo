@@ -10,7 +10,7 @@ raw_input_dir="raw_${exp_name}"
 tokenized_dir="tokenized_${exp_name}"
 dict_path="${DATA_DIR_ROOT}/xlmr.base/dict.txt"
 spm_path="${DATA_DIR_ROOT}/xlmr.base/sentencepiece.bpe.model"
-task=mluna
+task=mluna_lm
 corpus_type=monolingual
 
 raw_mono_dir="${raw_input_dir}/${corpus_type}"
