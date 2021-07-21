@@ -41,12 +41,15 @@ fairseq-preprocess --task ${task} \
 --srcdict $dict_path \
 --destdir $bin_destdir
 
+# we save monolingal data one lang by one lang
+mkdir -p "${bin_destdir}/$lg"
+
 # Since we only have a source language, the output file has a None for the
 # target language. Remove this
 for stage in train test valid; do
-  mv "$bin_destdir/$stage.$lg-None.$lg.bin" "$bin_destdir/$stage.$lg.bin"
-  mv "$bin_destdir/$stage.$lg-None.$lg.idx" "$bin_destdir/$stage.$lg.idx"
+  mv "$bin_destdir/$stage.$lg-None.$lg.bin" "$bin_destdir/${lg}/$stage.bin"
+  mv "$bin_destdir/$stage.$lg-None.$lg.idx" "$bin_destdir/${lg}/$stage.idx"
 done
 # we use sentencepiece, so dict is shared
-mv "$bin_destdir/dict.${lg}.txt" "$bin_destdir/../dict.txt"
+mv "$bin_destdir/dict.${lg}.txt" "$bin_destdir/dict.txt"
 echo "Done"

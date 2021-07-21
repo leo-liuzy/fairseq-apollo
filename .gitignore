@@ -142,3 +142,4 @@ data-bin/**/*
 **/xlmr.large/*
 fairseq/data/**/*
 .DS_Store
+checkpoint/

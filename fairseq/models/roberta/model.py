@@ -394,3 +394,8 @@ def xlm_architecture(args):
     args.encoder_ffn_embed_dim = getattr(args, 'encoder_ffn_embed_dim', 1280*4)
     args.encoder_attention_heads = getattr(args, 'encoder_attention_heads', 16)
     base_architecture(args)
+
+
+@register_model_architecture('roberta', 'xlmr_base')
+def xlmr_base_architecture(args):
+    base_architecture(args)
