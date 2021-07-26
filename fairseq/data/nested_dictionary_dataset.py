@@ -52,7 +52,7 @@ class NestedDictionaryDataset(FairseqDataset):
         self.sizes = [sizes] if not isinstance(sizes, (list, tuple)) else sizes
 
         first = None
-        for v in self.defn.values():
+        for k, v in self.defn.items():
             if not isinstance(v, (FairseqDataset, torch.utils.data.Dataset, )):
                 raise ValueError('Expected Dataset but found: {}'.format(v.__class__))
             first = first or v

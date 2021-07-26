@@ -12,8 +12,8 @@ from fairseq import metrics, modules, utils
 from fairseq.criterions import FairseqCriterion, register_criterion
 
 
-@register_criterion('mluna_lm')
-class MLunaLmLoss(FairseqCriterion):
+@register_criterion('xlm_xcl')
+class XlmXclLoss(FairseqCriterion):
     """
     Implementation for the loss used in masked language model (MLM) training.
     """
@@ -21,6 +21,10 @@ class MLunaLmLoss(FairseqCriterion):
     def __init__(self, task, tpu):
         super().__init__(task)
         self.tpu = tpu
+        assert hasattr(task, "objective_use_mode")
+        self.objective_use_mode = task.objective_use_mode
+        if self.objective_use_mode == 'alter':
+            self.use_mono = True  # internal counter of whether we use mono or para objective
 
     def forward(self, model, sample, reduce=True):
         """Compute the loss for the given sample.
@@ -48,7 +52,7 @@ class MLunaLmLoss(FairseqCriterion):
                 masked_tokens,
                 masked_tokens.new([True]),
             )
-
+        # TODO(Leo): here's a bug that the batch size keeps beeing 1
         logits = model(**sample['net_input'], masked_tokens=masked_tokens)[0]
         targets = model.get_targets(sample, [logits])
         if masked_tokens is not None:

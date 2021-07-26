@@ -3,7 +3,7 @@
 # Usage: ./preprocess_mono.sh $lg_pair
 #
 
-lg_pair="ar-en"
+lg_pair=$1
 DATA_DIR_ROOT="data"
 BIN_DATA_DIR_ROOT="data-bin"
 exp_name="XLM_pilot_run_21Langs_debug"
@@ -49,7 +49,8 @@ fairseq-preprocess --task ${task} \
 --validpref "${DATA_DIR_ROOT}/${tokenized_para_dir}/valid.${lg_pair}" \
 --testpref "${DATA_DIR_ROOT}/${tokenized_para_dir}/test.${lg_pair}" \
 --srcdict $dict_path \
---destdir $bin_destdir \
+--tgtdict $dict_path \
+--destdir $bin_destdir
 
 # we save bilingal data by language pair
 mkdir -p "${bin_destdir}/$lg_pair"
@@ -64,6 +65,6 @@ for stage in train test valid; do
 done
 ## we use sentencepiece, so dict is shared
 for lg in $(echo $lg_pair | sed -e 's/\-/ /g'); do
-  mv "$bin_destdir/dict.${lg}.txt" "$bin_destdir/dict.txt"
+  mv "$bin_destdir/dict.${lg}.txt" "${BIN_DATA_DIR_ROOT}/${exp_name}/dict.txt"
 done
 #echo "Done"

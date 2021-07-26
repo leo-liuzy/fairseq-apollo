@@ -9,6 +9,7 @@ import numpy as np
 import torch
 
 from fairseq.data import data_utils, Dictionary
+from torch.utils.data.dataloader import default_collate
 
 from . import BaseWrapperDataset, LRUCacheDataset
 
@@ -94,6 +95,10 @@ class MaskTokensDataset(BaseWrapperDataset):
     def set_epoch(self, epoch, **unused):
         super().set_epoch(epoch)
         self.epoch = epoch
+
+    # def collater(self, samples):
+    #     # (Leo): this function added to support call from LRUDataset
+    #     return default_collate(samples)
 
     @lru_cache(maxsize=8)
     def __getitem__(self, index: int):

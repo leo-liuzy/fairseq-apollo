@@ -112,7 +112,7 @@ class RobertaModel(FairseqEncoderModel):
         encoder = RobertaEncoder(args, task.source_dictionary)
         return cls(args, encoder)
 
-    def forward(self, src_tokens, features_only=False, return_all_hiddens=False, classification_head_name=None, **kwargs):
+    def forward(self, src_tokens, tgt_tokens=None, features_only=False, return_all_hiddens=False, classification_head_name=None, **kwargs):
         if classification_head_name is not None:
             features_only = True
 
@@ -399,3 +399,6 @@ def xlm_architecture(args):
 @register_model_architecture('roberta', 'xlmr_base')
 def xlmr_base_architecture(args):
     base_architecture(args)
+
+    from transformers import AutoTokenizer
+
