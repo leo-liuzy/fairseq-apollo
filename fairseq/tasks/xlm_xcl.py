@@ -22,6 +22,7 @@ from fairseq.data import (
     NumelDataset,
     NumSamplesDataset,
     PadDataset,
+    PositionDataset,
     PrependTokenDataset,
     MultiCorpusSampledDataset,
     RawLabelDataset,
@@ -234,6 +235,7 @@ class XlmXcl(FairseqTask):
             pad_idx=self.source_dictionary.pad(),
             left_pad=False,
         )
+        src_positions =
         tgt_tokens, tgt_mlm_input_dataset, tgt_mlm_output_dataset = None, None, None
         if lang2:
             tgt_tokens = PadDataset(
@@ -275,6 +277,7 @@ class XlmXcl(FairseqTask):
                     'net_input': {
                         'src_tokens': src_tokens,
                         'src_tokens_mlm': src_mlm_input_dataset,
+                        'src_positions': None ,
                         'src_lengths': NumelDataset(src_tokens, reduce=False),
                         'tgt_tokens': tgt_tokens,
                         'tgt_tokens_mlm': tgt_mlm_input_dataset,

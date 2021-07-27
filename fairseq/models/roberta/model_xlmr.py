@@ -92,10 +92,11 @@ class XLMRXCLModel(XLMRModel):
                 classification_head_name=None, **kwargs):
         # TODO (Leo): heavily(?) modify this function
         # TODO (Leo): I suspect dataset is not yet completed; mono corpus should be the first batch
+        # TODO (Leo): 
         assert not (src_tokens_mlm is None or src_lengths is None), "src_tokens_mlm or src_lengths missing in batch"
         if classification_head_name is not None:
             features_only = True
-        self.encoder.sentence
+        # self.encoder.sentence
         x, extra = self.encoder(src_tokens, features_only, return_all_hiddens, **kwargs)
 
         if classification_head_name is not None:
