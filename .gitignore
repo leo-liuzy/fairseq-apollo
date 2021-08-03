@@ -140,6 +140,6 @@ data/para/**
 data-bin/**/*
 **/xlmr.base/*
 **/xlmr.large/*
-fairseq/data/**/*
+# fairseq/data/**/*
 .DS_Store
 checkpoint/
