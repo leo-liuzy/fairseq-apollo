@@ -8,6 +8,7 @@ import os
 
 import numpy as np
 import torch
+import argparse
 from collections import OrderedDict
 
 from fairseq.data import (
@@ -26,6 +27,7 @@ from fairseq.data import (
     PrependTokenDataset,
     MultiCorpusSampledDataset,
     RawLabelDataset,
+    RoundRobinZipDatasets,
     ResamplingDataset,
     SortDataset,
     TokenBlockDataset,
@@ -35,6 +37,33 @@ from fairseq import utils
 
 
 logger = logging.getLogger(__name__)
+
+
+class round_robin_sampler_generator():
+    def __init__(self, init_state=1):
+        self.idx = init_state
+
+    def __call__(self, x: list):
+        self.idx += 1
+        self.idx %= len(x)
+        return x[self.idx - 1]
+
+
+def uniform_sampler(x):
+    # Sample from uniform distribution
+    return np.random.choice(x, 1).item()
+
+
+def sampler_mapping(s):
+    """
+    Parse boolean arguments from the command line.
+    """
+    if s.lower() == "round_robin":
+        return round_robin_sampler_generator()
+    elif s.lower() == "uniform":
+        return uniform_sampler
+    else:
+        raise argparse.ArgumentTypeError("Invalid value for a boolean flag!")
 
 
 @register_task('xlm_xcl')
@@ -54,6 +83,14 @@ class XlmXcl(FairseqTask):
         parser.add_argument('--use-para-data', action="store_true",
                             help='colon separated path to parallel data directories list,'
                                  ' will be iterated upon during epochs in round-robin manner')
+        parser.add_argument('--use-mcl', action="store_true",
+                            help='Use Monolingual Contrastive Learning')
+        parser.add_argument('--use-tcl', action="store_true",
+                            help='Use Translational Contrastive Learning')
+        parser.add_argument('--lang-batch-sampler', choices=["uniform", "round_robin"], type=sampler_mapping,
+                            default="round_robin",
+                            help='colon separated path to parallel data directories list,'
+                                 ' will be iterated upon during epochs in round-robin manner')
         parser.add_argument('--langs', default=None,
                             help='The list of languages we include. colon separated')
         parser.add_argument('--lang-pairs', default=None,
@@ -62,6 +99,14 @@ class XlmXcl(FairseqTask):
                             choices=['all', 'alter'],
                             help='If set to "all", we add all objective together and jointly optimize.'
                                  'If "alter", alternate between mono and parallel objective.')
+        parser.add_argument('--mlm-coeff', type=float, default=1.0,
+                            help='Coefficient for Masked Language Model (MLM) loss')
+        parser.add_argument('--tlm-coeff', type=float, default=1.0,
+                            help='Coefficient for Translational Language Model (TLM) loss')
+        parser.add_argument('--mcl-coeff', type=float, default=1.0,
+                            help='Coefficient for Monolingual Contrastive Learning (MCL, i.e. SimCSE) loss')
+        parser.add_argument('--tcl-coeff', type=float, default=1.0,
+                            help='Coefficient for Translational Contrastive Learning (TCL) loss')
         parser.add_argument('--mono-sample-break-mode', default='complete',
                             choices=['none', 'complete', 'complete_doc', 'eos'],
                             help='If omitted or "none", fills each sample with tokens-per-sample '
@@ -93,6 +138,11 @@ class XlmXcl(FairseqTask):
                             help='smoothing alpha for sample rations across multiple datasets')
         parser.add_argument('--multilang-para-sampling-alpha', type=float, default=1.0,
                             help='smoothing alpha for sample rations across multiple datasets')
+        parser.add_argument('--temp-mcl', type=float, default=1.0,
+                            help='Temperature used in Monolingual Contrastive Learning (MCL, i.e. SimCSE)')
+        parser.add_argument('--temp-tcl', type=float, default=1.0,
+                            help='Temperature used in Translational Contrastive Learning (TCL)')
+
 
     def __init__(self, args, dictionary):
         super().__init__(args)
@@ -235,18 +285,22 @@ class XlmXcl(FairseqTask):
             pad_idx=self.source_dictionary.pad(),
             left_pad=False,
         )
-        src_positions =
-        tgt_tokens, tgt_mlm_input_dataset, tgt_mlm_output_dataset = None, None, None
+        src_positions = PositionDataset(src_tokens, pad_idx=self.source_dictionary.pad())
+        src_positions = PadDataset(
+            src_positions, pad_idx=self.source_dictionary.pad(), left_pad=False,
+        )
+        # optionally create the same dataset for target language
+        tgt_tokens, tgt_mlm_input_dataset, tgt_mlm_output_dataset, tgt_positions = None, None, None, None
         if lang2:
             tgt_tokens = PadDataset(
                 ConcatDataset(maybe_datasets[::-1]),
-                pad_idx=self.source_dictionary.pad(),
+                pad_idx=self.target_dictionary.pad(),
                 left_pad=False,
             )
             tgt_mlm_input_dataset, tgt_mlm_output_dataset = MaskTokensDataset.apply_mask(
                 tgt_tokens,
-                self.source_dictionary,  # TODO(Leo): If we later decide to do BPE, we need to change this
-                pad_idx=self.source_dictionary.pad(),
+                self.target_dictionary,  # TODO(Leo): If we later decide to do BPE, we need to change this
+                pad_idx=self.target_dictionary.pad(),
                 mask_idx=self.mask_idx,
                 seed=self.args.seed,
                 mask_prob=self.args.mask_prob,
@@ -257,19 +311,23 @@ class XlmXcl(FairseqTask):
             )
             tgt_mlm_input_dataset = PadDataset(
                 tgt_mlm_input_dataset,
-                pad_idx=self.source_dictionary.pad(),
+                pad_idx=self.target_dictionary.pad(),
                 left_pad=False,
             )
             tgt_mlm_output_dataset = PadDataset(
                 tgt_mlm_output_dataset,
-                pad_idx=self.source_dictionary.pad(),
+                pad_idx=self.target_dictionary.pad(),
                 left_pad=False,
+            )
+            tgt_positions = PositionDataset(tgt_tokens, pad_idx=self.target_dictionary.pad())
+            tgt_positions = PadDataset(
+                tgt_positions, pad_idx=self.target_dictionary.pad(), left_pad=False,
             )
 
         dummy_final_tokens = ConcatSentencesDataset(src_tokens, tgt_tokens) if lang2\
-            else ConcatSentencesDataset(src_tokens)
+            else src_tokens
         final_target = ConcatSentencesDataset(src_mlm_output_dataset, tgt_mlm_output_dataset) if lang2\
-            else ConcatSentencesDataset(src_mlm_output_dataset)
+            else src_mlm_output_dataset
         if lang2:
             # parallel corpus is optional
             lang_dataset = NestedDictionaryDataset(
@@ -277,17 +335,26 @@ class XlmXcl(FairseqTask):
                     'net_input': {
                         'src_tokens': src_tokens,
                         'src_tokens_mlm': src_mlm_input_dataset,
-                        'src_positions': None ,
+                        'src_positions': src_positions,
                         'src_lengths': NumelDataset(src_tokens, reduce=False),
+
                         'tgt_tokens': tgt_tokens,
                         'tgt_tokens_mlm': tgt_mlm_input_dataset,
+                        'tgt_positions': tgt_positions,
                         'tgt_lengths': NumelDataset(tgt_tokens, reduce=False),
                     },
-                    'target': PadDataset(
-                        final_target,
-                        pad_idx=self.source_dictionary.pad(),
-                        left_pad=False,
-                    ),
+                    'target': {
+                        "src_mlm": PadDataset(
+                            src_mlm_output_dataset,
+                            pad_idx=self.source_dictionary.pad(),
+                            left_pad=False,
+                        ),
+                        "tgt_mlm": PadDataset(
+                            tgt_mlm_output_dataset,
+                            pad_idx=self.target_dictionary.pad(),
+                            left_pad=False,
+                        )
+                    },
                     'nsentences': NumSamplesDataset(),
                     'ntokens': NumelDataset(dummy_final_tokens, reduce=True),
                     # 'lang_id': RawLabelDataset([lang_id] * src_dataset.sizes.shape[0]),
@@ -300,13 +367,16 @@ class XlmXcl(FairseqTask):
                     'net_input': {
                         'src_tokens': src_tokens,
                         'src_tokens_mlm': src_mlm_input_dataset,
+                        'src_positions': src_positions,
                         'src_lengths': NumelDataset(src_tokens, reduce=False),
                     },
-                    'target': PadDataset(
-                        final_target,
-                        pad_idx=self.source_dictionary.pad(),
-                        left_pad=False,
-                    ),
+                    'target': {
+                        'src_mlm': PadDataset(
+                            final_target,
+                            pad_idx=self.source_dictionary.pad(),
+                            left_pad=False,
+                        ),
+                    },
                     'nsentences': NumSamplesDataset(),
                     'ntokens': NumelDataset(dummy_final_tokens, reduce=True),
                     # 'lang_id': RawLabelDataset([lang_id] * src_dataset.sizes.shape[0]),
@@ -359,7 +429,7 @@ class XlmXcl(FairseqTask):
         self.datasets[split] = MultiCorpusSampledDataset(OrderedDict({
             "mono_" + split: self.datasets[split],
             "para_" + split: para_final_dataset
-        }))
+        }), sampling_func=self.args.lang_batch_sampler)
 
     def _maybe_resample_datasets(self, split, lang_datasets, lang_datasets_meta, sampling_alpha=1.0,
                                  epoch=1, combine=False, **kwargs):

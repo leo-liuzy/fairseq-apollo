@@ -253,8 +253,11 @@ class Trainer(object):
 
             # load model parameters
             try:
-                self.get_model().load_state_dict(
-                    state["model"], strict=True, args=self.args
+                model_state = state["model"]
+                args = self.args
+                model = self.get_model()
+                model.load_state_dict(
+                    model_state, strict=True, args=args
                 )
                 if utils.has_parameters(self.get_criterion()):
                     self.get_criterion().load_state_dict(

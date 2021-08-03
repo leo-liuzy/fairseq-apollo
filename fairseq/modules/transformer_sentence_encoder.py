@@ -225,6 +225,7 @@ class TransformerSentenceEncoder(nn.Module):
         segment_labels: torch.Tensor = None,
         last_state_only: bool = False,
         positions: Optional[torch.Tensor] = None,
+        force_positions: bool = False,
     ) -> Tuple[torch.Tensor, torch.Tensor]:
 
         # compute padding mask. This is needed for multi-head attention
@@ -238,7 +239,8 @@ class TransformerSentenceEncoder(nn.Module):
             x *= self.embed_scale
 
         if self.embed_positions is not None:
-            x += self.embed_positions(tokens, positions=positions)
+            # (Leo): added "force_positions" for compatibility issue
+            x += self.embed_positions(tokens, force_positions=force_positions, positions=positions)
 
         if self.segment_embeddings is not None and segment_labels is not None:
             x += self.segment_embeddings(segment_labels)
