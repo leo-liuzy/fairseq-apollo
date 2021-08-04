@@ -66,8 +66,8 @@ def sampler_mapping(s):
         raise argparse.ArgumentTypeError("Invalid value for a boolean flag!")
 
 
-@register_task('xlm_xcl')
-class XlmXcl(FairseqTask):
+@register_task('xlmr_xcl')
+class XlmrXcl(FairseqTask):
     """Task for training XLM (only MLM and TLM)
        and XCL (monolingual/translational contrastive learning)"""
 

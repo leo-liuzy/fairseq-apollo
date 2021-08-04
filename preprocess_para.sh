@@ -30,7 +30,7 @@ for split in train test valid; do
     for lg in $(echo $lg_pair | sed -e 's/\-/ /g'); do
       input=${DATA_DIR_ROOT}/${raw_para_dir}/${split}.${lg_pair}.${lg}
       output=${DATA_DIR_ROOT}/${tokenized_para_dir}/${split}.${lg_pair}.${lg}
-      spm_encode --model=${spm_path} < "${input}" > "${output}"
+      python spm_encode.py --model=${spm_path} < "${input}" > "${output}"
     done
 done
 IFS='-' read -ra LANGs <<< "$lg_pair"

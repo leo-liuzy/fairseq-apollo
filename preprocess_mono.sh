@@ -10,7 +10,7 @@ raw_input_dir="raw_${exp_name}"
 tokenized_dir="tokenized_${exp_name}"
 dict_path="${DATA_DIR_ROOT}/xlmr.base/dict.txt"
 spm_path="${DATA_DIR_ROOT}/xlmr.base/sentencepiece.bpe.model"
-task=mluna_lm
+task=xlmr_xcl
 corpus_type=monolingual
 
 raw_mono_dir="${raw_input_dir}/${corpus_type}"
@@ -28,7 +28,7 @@ for split in train test valid; do
     echo "Tokenizing ${lg}.${split}"
     input=${DATA_DIR_ROOT}/${raw_mono_dir}/${split}.${lg}
     output=${DATA_DIR_ROOT}/${tokenized_mono_dir}/${split}.${lg}
-    spm_encode --model=${spm_path} < "${input}" > "${output}"
+    python spm_encode.py --model=${spm_path} < "${input}" > "${output}"
 done
 
 echo "Binarizing...."
