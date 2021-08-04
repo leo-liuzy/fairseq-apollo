@@ -23,6 +23,7 @@ python fairseq_cli/train.py --data data-bin/XLM_pilot_run_21Langs_debug \
     --seed 42 \
     --max-update 100 \
     --save-dir checkpoints/XLM_pilot_run_21Langs_debug \
-    --log-format json \
+    --log-interval 2 \
+    --log-format tqdm \
     --tensorboard-logdir checkpoints/XLM_pilot_run_21Langs_debug/log
     # --dataset-impl "mmap" \
