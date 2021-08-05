@@ -138,7 +138,7 @@ data/raw_XLM_pilot_run_21Langs/**
 data/tokenized_XLM_pilot_run_21Langs/**/*
 data/xlm-roberta-base/
 data/para/**
-data-bin/**/*
+# data-bin/**/*
 **/xlmr.base/*
 **/xlmr.large/*
 # fairseq/data/**/*
