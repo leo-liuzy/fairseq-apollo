@@ -194,6 +194,7 @@ class XlmXclLoss(FairseqCriterion):
                                               return_all_hiddens=True)
         sentence_rep_z = model.pooler(z_attn_mask, z_extra['inner_states'])
         cos_sim = self.mcl_similarity_metric(sentence_rep_x.unsqueeze(1), sentence_rep_z.unsqueeze(0))
+        # gather_all()
         labels = torch.arange(cos_sim.size(0)).long().to(model.encoder.sentence_encoder.embed_tokens.weight.device)
         loss_fct = nn.CrossEntropyLoss()
         tcl_loss = loss_fct(cos_sim, labels)

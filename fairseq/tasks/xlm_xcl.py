@@ -250,9 +250,6 @@ class XlmrXcl(FairseqTask):
                 else self.args.mono_sample_break_mode,
             )
             logger.info('loaded {} blocks from: {}'.format(len(dataset), split_path))
-
-            # prepend beginning-of-sentence token (<s>, equiv. to [CLS] in BERT)
-            dataset = PrependTokenDataset(dataset, self.source_dictionary.bos())
             maybe_datasets.append(dataset)
 
         # monolingual dataset is a must
@@ -274,6 +271,9 @@ class XlmrXcl(FairseqTask):
             freq_weighted_replacement=self.args.freq_weighted_replacement,
             mask_whole_words=mask_whole_words,
         )
+        # prepend beginning-of-sentence token (<s>, equiv. to [CLS] in BERT)
+        src_mlm_input_dataset = PrependTokenDataset(src_mlm_input_dataset, self.source_dictionary.bos())
+        src_mlm_output_dataset = PrependTokenDataset(src_mlm_output_dataset, self.source_dictionary.bos())
         # (Leo): without wrapping the two dataset with PadDataset will cause collator to fail
         src_mlm_input_dataset = PadDataset(
             src_mlm_input_dataset,
@@ -309,6 +309,8 @@ class XlmrXcl(FairseqTask):
                 freq_weighted_replacement=self.args.freq_weighted_replacement,
                 mask_whole_words=mask_whole_words,
             )
+            tgt_mlm_input_dataset = PrependTokenDataset(tgt_mlm_input_dataset, self.source_dictionary.bos())
+            tgt_mlm_output_dataset = PrependTokenDataset(tgt_mlm_output_dataset, self.source_dictionary.bos())
             tgt_mlm_input_dataset = PadDataset(
                 tgt_mlm_input_dataset,
                 pad_idx=self.target_dictionary.pad(),
