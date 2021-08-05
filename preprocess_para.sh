@@ -11,7 +11,7 @@ raw_input_dir="raw_${exp_name}"
 tokenized_dir="tokenized_${exp_name}"
 dict_path="${DATA_DIR_ROOT}/xlmr.base/dict.txt"
 spm_path="${DATA_DIR_ROOT}/xlmr.base/sentencepiece.bpe.model"
-task=xlmr_xcl
+task=xlm_xcl
 corpus_type=bilingual
 
 raw_para_dir="${raw_input_dir}/${corpus_type}"

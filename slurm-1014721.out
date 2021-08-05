@@ -80,3 +80,319 @@ Binarizing....
 2021-08-04 21:28:08 | INFO | fairseq_cli.preprocess | [de] Dictionary: 250001 types
 2021-08-04 21:28:09 | INFO | fairseq_cli.preprocess | [de] data/tokenized_XLM_pilot_run_21Langs/bilingual/test.de-en.de: 5001 sents, 180800 tokens, 0.0409% replaced by <unk>
 2021-08-04 21:28:09 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:45:52 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs/bilingual/train.de-en.en: 9323067 sents, 292997638 tokens, 0.0563% replaced by <unk>
+2021-08-04 21:45:52 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:45:53 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs/bilingual/valid.de-en.en: 5001 sents, 158768 tokens, 0.0151% replaced by <unk>
+2021-08-04 21:45:53 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:45:53 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs/bilingual/test.de-en.en: 5001 sents, 160158 tokens, 0.212% replaced by <unk>
+2021-08-04 21:45:53 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs/bilingual
+
+Language 4
+Preprocessing el-en
+Tokenizing....
+Tokenizing train.el-en
+0it [00:00, ?it/s]63it [00:00, 629.40it/s]2450it [00:00, 14293.22it/s]3880it [00:00, 10583.80it/s]5000it [00:00, 10290.53it/s]
+0it [00:00, ?it/s]1it [00:00,  5.77it/s]2379it [00:00, 10739.42it/s]3777it [00:00, 11158.06it/s]5000it [00:00, 11336.01it/s]
+Tokenizing test.el-en
+0it [00:00, ?it/s]634it [00:00, 6337.69it/s]1000it [00:00, 8695.33it/s]
+0it [00:00, ?it/s]1000it [00:00, 11694.70it/s]
+Tokenizing valid.el-en
+0it [00:00, ?it/s]1000it [00:00, 12203.21it/s]
+0it [00:00, ?it/s]187it [00:00, 1868.58it/s]1000it [00:00, 7563.83it/s]
+Binarizing....
+2021-08-04 21:46:03 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs_debug/bilingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='el', srcdict='data/xlmr.base/dict.txt', target_lang='en', task='xlmr_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.el-en', tgtdict='data/xlmr.base/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.el-en', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.el-en', workers=1)
+2021-08-04 21:46:04 | INFO | fairseq_cli.preprocess | [el] Dictionary: 250001 types
+2021-08-04 21:46:05 | INFO | fairseq_cli.preprocess | [el] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.el-en.el: 5001 sents, 218077 tokens, 0.000459% replaced by <unk>
+2021-08-04 21:46:05 | INFO | fairseq_cli.preprocess | [el] Dictionary: 250001 types
+2021-08-04 21:46:05 | INFO | fairseq_cli.preprocess | [el] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.el-en.el: 1001 sents, 44765 tokens, 0.00223% replaced by <unk>
+2021-08-04 21:46:05 | INFO | fairseq_cli.preprocess | [el] Dictionary: 250001 types
+2021-08-04 21:46:05 | INFO | fairseq_cli.preprocess | [el] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.el-en.el: 1001 sents, 44525 tokens, 0.00225% replaced by <unk>
+2021-08-04 21:46:05 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:06 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.el-en.en: 5001 sents, 173963 tokens, 0.0742% replaced by <unk>
+2021-08-04 21:46:06 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:06 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.el-en.en: 1001 sents, 35541 tokens, 0.00281% replaced by <unk>
+2021-08-04 21:46:06 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:06 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.el-en.en: 1001 sents, 35776 tokens, 0.0028% replaced by <unk>
+2021-08-04 21:46:06 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs_debug/bilingual
+
+Language 5
+Preprocessing en-es
+Tokenizing....
+Tokenizing train.en-es
+0it [00:00, ?it/s]1044it [00:00, 10434.44it/s]3171it [00:00, 16627.71it/s]5000it [00:00, 17761.44it/s]
+0it [00:00, ?it/s]92it [00:00, 919.89it/s]2300it [00:00, 13364.77it/s]3637it [00:00, 11258.80it/s]5000it [00:00, 12417.49it/s]
+Tokenizing test.en-es
+0it [00:00, ?it/s]1000it [00:00, 11787.68it/s]
+0it [00:00, ?it/s]1000it [00:00, 10727.83it/s]
+Tokenizing valid.en-es
+0it [00:00, ?it/s]1000it [00:00, 15137.68it/s]
+0it [00:00, ?it/s]1000it [00:00, 13446.95it/s]
+Binarizing....
+2021-08-04 21:46:15 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs_debug/bilingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='en', srcdict='data/xlmr.base/dict.txt', target_lang='es', task='xlmr_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-es', tgtdict='data/xlmr.base/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-es', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-es', workers=1)
+2021-08-04 21:46:16 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:17 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-es.en: 5001 sents, 183513 tokens, 0.000545% replaced by <unk>
+2021-08-04 21:46:17 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:17 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-es.en: 1001 sents, 35959 tokens, 0.00278% replaced by <unk>
+2021-08-04 21:46:17 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:17 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-es.en: 1001 sents, 37691 tokens, 0.00265% replaced by <unk>
+2021-08-04 21:46:17 | INFO | fairseq_cli.preprocess | [es] Dictionary: 250001 types
+2021-08-04 21:46:18 | INFO | fairseq_cli.preprocess | [es] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-es.es: 5001 sents, 210083 tokens, 0.000476% replaced by <unk>
+2021-08-04 21:46:18 | INFO | fairseq_cli.preprocess | [es] Dictionary: 250001 types
+2021-08-04 21:46:18 | INFO | fairseq_cli.preprocess | [es] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-es.es: 1001 sents, 41142 tokens, 0.00243% replaced by <unk>
+2021-08-04 21:46:18 | INFO | fairseq_cli.preprocess | [es] Dictionary: 250001 types
+2021-08-04 21:46:18 | INFO | fairseq_cli.preprocess | [es] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-es.es: 1001 sents, 43450 tokens, 0.0046% replaced by <unk>
+2021-08-04 21:46:18 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs_debug/bilingual
+
+Language 6
+Preprocessing en-fr
+Tokenizing....
+Tokenizing train.en-fr
+0it [00:00, ?it/s]1204it [00:00, 12034.10it/s]3260it [00:00, 13134.94it/s]5000it [00:00, 14994.54it/s]
+0it [00:00, ?it/s]1476it [00:00, 14759.35it/s]3055it [00:00, 15365.24it/s]5000it [00:00, 17094.21it/s]
+Tokenizing test.en-fr
+0it [00:00, ?it/s]1000it [00:00, 12801.09it/s]
+0it [00:00, ?it/s]617it [00:00, 6167.18it/s]1000it [00:00, 8477.74it/s]
+Tokenizing valid.en-fr
+0it [00:00, ?it/s]138it [00:00, 1379.65it/s]1000it [00:00, 7319.44it/s]
+0it [00:00, ?it/s]1000it [00:00, 11125.65it/s]
+Binarizing....
+2021-08-04 21:46:27 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs_debug/bilingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='en', srcdict='data/xlmr.base/dict.txt', target_lang='fr', task='xlmr_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-fr', tgtdict='data/xlmr.base/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-fr', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-fr', workers=1)
+2021-08-04 21:46:28 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:29 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-fr.en: 5001 sents, 178312 tokens, 0.00112% replaced by <unk>
+2021-08-04 21:46:29 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:30 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-fr.en: 1001 sents, 36251 tokens, 0.00276% replaced by <unk>
+2021-08-04 21:46:30 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:30 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-fr.en: 1001 sents, 33104 tokens, 0.00302% replaced by <unk>
+2021-08-04 21:46:30 | INFO | fairseq_cli.preprocess | [fr] Dictionary: 250001 types
+2021-08-04 21:46:31 | INFO | fairseq_cli.preprocess | [fr] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-fr.fr: 5001 sents, 225142 tokens, 0.000444% replaced by <unk>
+2021-08-04 21:46:31 | INFO | fairseq_cli.preprocess | [fr] Dictionary: 250001 types
+2021-08-04 21:46:32 | INFO | fairseq_cli.preprocess | [fr] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-fr.fr: 1001 sents, 45513 tokens, 0.0022% replaced by <unk>
+2021-08-04 21:46:32 | INFO | fairseq_cli.preprocess | [fr] Dictionary: 250001 types
+2021-08-04 21:46:32 | INFO | fairseq_cli.preprocess | [fr] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-fr.fr: 1001 sents, 41575 tokens, 0.00241% replaced by <unk>
+2021-08-04 21:46:32 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs_debug/bilingual
+
+Language 7
+Preprocessing en-hi
+Tokenizing....
+Tokenizing train.en-hi
+0it [00:00, ?it/s]703it [00:00, 7028.87it/s]5000it [00:00, 26523.60it/s]
+0it [00:00, ?it/s]1741it [00:00, 17405.04it/s]4630it [00:00, 24159.44it/s]5000it [00:00, 23901.54it/s]
+Tokenizing test.en-hi
+0it [00:00, ?it/s]1000it [00:00, 15445.39it/s]
+0it [00:00, ?it/s]1000it [00:00, 13943.74it/s]
+Tokenizing valid.en-hi
+0it [00:00, ?it/s]1000it [00:00, 18962.11it/s]
+0it [00:00, ?it/s]742it [00:00, 7419.72it/s]1000it [00:00, 9342.43it/s]
+Binarizing....
+2021-08-04 21:46:41 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs_debug/bilingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='en', srcdict='data/xlmr.base/dict.txt', target_lang='hi', task='xlmr_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-hi', tgtdict='data/xlmr.base/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-hi', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-hi', workers=1)
+2021-08-04 21:46:42 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:42 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-hi.en: 5001 sents, 94909 tokens, 0.00105% replaced by <unk>
+2021-08-04 21:46:42 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:42 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-hi.en: 1001 sents, 18952 tokens, 0.00528% replaced by <unk>
+2021-08-04 21:46:42 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:42 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-hi.en: 1001 sents, 18800 tokens, 0.00532% replaced by <unk>
+2021-08-04 21:46:42 | INFO | fairseq_cli.preprocess | [hi] Dictionary: 250001 types
+2021-08-04 21:46:43 | INFO | fairseq_cli.preprocess | [hi] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-hi.hi: 5001 sents, 133111 tokens, 0.000751% replaced by <unk>
+2021-08-04 21:46:43 | INFO | fairseq_cli.preprocess | [hi] Dictionary: 250001 types
+2021-08-04 21:46:43 | INFO | fairseq_cli.preprocess | [hi] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-hi.hi: 1001 sents, 26452 tokens, 0.00756% replaced by <unk>
+2021-08-04 21:46:43 | INFO | fairseq_cli.preprocess | [hi] Dictionary: 250001 types
+2021-08-04 21:46:43 | INFO | fairseq_cli.preprocess | [hi] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-hi.hi: 1001 sents, 26189 tokens, 0.00382% replaced by <unk>
+2021-08-04 21:46:43 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs_debug/bilingual
+
+Language 8
+Preprocessing en-ru
+Tokenizing....
+Tokenizing train.en-ru
+0it [00:00, ?it/s]1434it [00:00, 14338.92it/s]3231it [00:00, 16349.96it/s]5000it [00:00, 17827.62it/s]
+0it [00:00, ?it/s]1427it [00:00, 14263.38it/s]2854it [00:00, 12469.63it/s]4364it [00:00, 13581.85it/s]5000it [00:00, 14112.19it/s]
+Tokenizing test.en-ru
+0it [00:00, ?it/s]1000it [00:00, 10880.45it/s]
+0it [00:00, ?it/s]1000it [00:00, 11284.81it/s]
+Tokenizing valid.en-ru
+0it [00:00, ?it/s]1000it [00:00, 13601.80it/s]
+0it [00:00, ?it/s]1000it [00:00, 12195.19it/s]
+Binarizing....
+2021-08-04 21:46:52 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs_debug/bilingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='en', srcdict='data/xlmr.base/dict.txt', target_lang='ru', task='xlmr_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-ru', tgtdict='data/xlmr.base/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-ru', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-ru', workers=1)
+2021-08-04 21:46:53 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:54 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-ru.en: 5001 sents, 179687 tokens, 0.000557% replaced by <unk>
+2021-08-04 21:46:54 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:54 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-ru.en: 1001 sents, 36044 tokens, 0.00277% replaced by <unk>
+2021-08-04 21:46:54 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:46:54 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-ru.en: 1001 sents, 34900 tokens, 0.00287% replaced by <unk>
+2021-08-04 21:46:54 | INFO | fairseq_cli.preprocess | [ru] Dictionary: 250001 types
+2021-08-04 21:46:55 | INFO | fairseq_cli.preprocess | [ru] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-ru.ru: 5001 sents, 200576 tokens, 0.000499% replaced by <unk>
+2021-08-04 21:46:55 | INFO | fairseq_cli.preprocess | [ru] Dictionary: 250001 types
+2021-08-04 21:46:55 | INFO | fairseq_cli.preprocess | [ru] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-ru.ru: 1001 sents, 39417 tokens, 0.00507% replaced by <unk>
+2021-08-04 21:46:55 | INFO | fairseq_cli.preprocess | [ru] Dictionary: 250001 types
+2021-08-04 21:46:55 | INFO | fairseq_cli.preprocess | [ru] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-ru.ru: 1001 sents, 38728 tokens, 0.00258% replaced by <unk>
+2021-08-04 21:46:55 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs_debug/bilingual
+
+Language 9
+Preprocessing en-sw
+Tokenizing....
+Tokenizing train.en-sw
+0it [00:00, ?it/s]2115it [00:00, 21148.61it/s]5000it [00:00, 28957.83it/s]
+0it [00:00, ?it/s]2900it [00:00, 28997.12it/s]5000it [00:00, 32978.86it/s]
+Tokenizing test.en-sw
+0it [00:00, ?it/s]1000it [00:00, 11237.28it/s]
+0it [00:00, ?it/s]1000it [00:00, 14962.08it/s]
+Tokenizing valid.en-sw
+0it [00:00, ?it/s]1000it [00:00, 16047.87it/s]
+0it [00:00, ?it/s]1000it [00:00, 13315.42it/s]
+Binarizing....
+2021-08-04 21:47:03 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs_debug/bilingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='en', srcdict='data/xlmr.base/dict.txt', target_lang='sw', task='xlmr_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-sw', tgtdict='data/xlmr.base/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-sw', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-sw', workers=1)
+2021-08-04 21:47:04 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:05 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-sw.en: 5001 sents, 126173 tokens, 0.000793% replaced by <unk>
+2021-08-04 21:47:05 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:05 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-sw.en: 1001 sents, 25592 tokens, 0.00391% replaced by <unk>
+2021-08-04 21:47:05 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:05 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-sw.en: 1001 sents, 25965 tokens, 0.00385% replaced by <unk>
+2021-08-04 21:47:05 | INFO | fairseq_cli.preprocess | [sw] Dictionary: 250001 types
+2021-08-04 21:47:05 | INFO | fairseq_cli.preprocess | [sw] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-sw.sw: 5001 sents, 125363 tokens, 0.000798% replaced by <unk>
+2021-08-04 21:47:05 | INFO | fairseq_cli.preprocess | [sw] Dictionary: 250001 types
+2021-08-04 21:47:05 | INFO | fairseq_cli.preprocess | [sw] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-sw.sw: 1001 sents, 25213 tokens, 0.00397% replaced by <unk>
+2021-08-04 21:47:05 | INFO | fairseq_cli.preprocess | [sw] Dictionary: 250001 types
+2021-08-04 21:47:06 | INFO | fairseq_cli.preprocess | [sw] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-sw.sw: 1001 sents, 25877 tokens, 0.00386% replaced by <unk>
+2021-08-04 21:47:06 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs_debug/bilingual
+
+Language 10
+Preprocessing en-th
+Tokenizing....
+Tokenizing train.en-th
+0it [00:00, ?it/s]3173it [00:00, 31726.85it/s]5000it [00:00, 40758.20it/s]
+0it [00:00, ?it/s]5000it [00:00, 50908.42it/s]
+Tokenizing test.en-th
+0it [00:00, ?it/s]1000it [00:00, 15483.42it/s]
+0it [00:00, ?it/s]1000it [00:00, 11909.75it/s]
+Tokenizing valid.en-th
+0it [00:00, ?it/s]1000it [00:00, 21636.74it/s]
+0it [00:00, ?it/s]1000it [00:00, 18338.88it/s]
+Binarizing....
+2021-08-04 21:47:14 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs_debug/bilingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='en', srcdict='data/xlmr.base/dict.txt', target_lang='th', task='xlmr_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-th', tgtdict='data/xlmr.base/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-th', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-th', workers=1)
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-th.en: 5001 sents, 53950 tokens, 0.00185% replaced by <unk>
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-th.en: 1001 sents, 10834 tokens, 0.00923% replaced by <unk>
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-th.en: 1001 sents, 10834 tokens, 0.00923% replaced by <unk>
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | [th] Dictionary: 250001 types
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | [th] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-th.th: 5001 sents, 67006 tokens, 0.00149% replaced by <unk>
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | [th] Dictionary: 250001 types
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | [th] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-th.th: 1001 sents, 13344 tokens, 0.00749% replaced by <unk>
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | [th] Dictionary: 250001 types
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | [th] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-th.th: 1001 sents, 13106 tokens, 0.00763% replaced by <unk>
+2021-08-04 21:47:15 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs_debug/bilingual
+
+Language 11
+Preprocessing en-tr
+Tokenizing....
+Tokenizing train.en-tr
+0it [00:00, ?it/s]2048it [00:00, 20474.11it/s]4270it [00:00, 21495.69it/s]5000it [00:00, 21600.59it/s]
+0it [00:00, ?it/s]2051it [00:00, 20502.59it/s]4399it [00:00, 22251.29it/s]5000it [00:00, 22684.18it/s]
+Tokenizing test.en-tr
+0it [00:00, ?it/s]1000it [00:00, 11079.01it/s]
+0it [00:00, ?it/s]1000it [00:00, 14310.00it/s]
+Tokenizing valid.en-tr
+0it [00:00, ?it/s]1000it [00:00, 15507.41it/s]
+0it [00:00, ?it/s]1000it [00:00, 12187.85it/s]
+Binarizing....
+2021-08-04 21:47:24 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs_debug/bilingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='en', srcdict='data/xlmr.base/dict.txt', target_lang='tr', task='xlmr_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-tr', tgtdict='data/xlmr.base/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-tr', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-tr', workers=1)
+2021-08-04 21:47:25 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:26 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-tr.en: 5001 sents, 160299 tokens, 0.000624% replaced by <unk>
+2021-08-04 21:47:26 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:26 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-tr.en: 1001 sents, 38826 tokens, 0.00258% replaced by <unk>
+2021-08-04 21:47:26 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:26 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-tr.en: 1001 sents, 32718 tokens, 0.00306% replaced by <unk>
+2021-08-04 21:47:26 | INFO | fairseq_cli.preprocess | [tr] Dictionary: 250001 types
+2021-08-04 21:47:27 | INFO | fairseq_cli.preprocess | [tr] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-tr.tr: 5001 sents, 176259 tokens, 0.000567% replaced by <unk>
+2021-08-04 21:47:27 | INFO | fairseq_cli.preprocess | [tr] Dictionary: 250001 types
+2021-08-04 21:47:28 | INFO | fairseq_cli.preprocess | [tr] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-tr.tr: 1001 sents, 40216 tokens, 0.00249% replaced by <unk>
+2021-08-04 21:47:28 | INFO | fairseq_cli.preprocess | [tr] Dictionary: 250001 types
+2021-08-04 21:47:28 | INFO | fairseq_cli.preprocess | [tr] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-tr.tr: 1001 sents, 35839 tokens, 0.00279% replaced by <unk>
+2021-08-04 21:47:28 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs_debug/bilingual
+
+Language 12
+Preprocessing en-ur
+Tokenizing....
+Tokenizing train.en-ur
+0it [00:00, ?it/s]2060it [00:00, 20595.45it/s]4120it [00:00, 18629.27it/s]5000it [00:00, 19479.20it/s]
+0it [00:00, ?it/s]1750it [00:00, 17496.80it/s]3500it [00:00, 15127.83it/s]5000it [00:00, 15251.38it/s]
+Tokenizing test.en-ur
+0it [00:00, ?it/s]1000it [00:00, 10026.83it/s]
+0it [00:00, ?it/s]1000it [00:00, 10765.23it/s]
+Tokenizing valid.en-ur
+0it [00:00, ?it/s]1000it [00:00, 15664.01it/s]
+0it [00:00, ?it/s]1000it [00:00, 12451.73it/s]
+Binarizing....
+2021-08-04 21:47:36 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs_debug/bilingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='en', srcdict='data/xlmr.base/dict.txt', target_lang='ur', task='xlmr_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-ur', tgtdict='data/xlmr.base/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-ur', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-ur', workers=1)
+2021-08-04 21:47:38 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:39 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-ur.en: 5001 sents, 189755 tokens, 0.000527% replaced by <unk>
+2021-08-04 21:47:39 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:39 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-ur.en: 1001 sents, 37326 tokens, 0.00268% replaced by <unk>
+2021-08-04 21:47:39 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:39 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-ur.en: 1001 sents, 37377 tokens, 0.00268% replaced by <unk>
+2021-08-04 21:47:39 | INFO | fairseq_cli.preprocess | [ur] Dictionary: 250001 types
+2021-08-04 21:47:41 | INFO | fairseq_cli.preprocess | [ur] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-ur.ur: 5001 sents, 208645 tokens, 0.000479% replaced by <unk>
+2021-08-04 21:47:41 | INFO | fairseq_cli.preprocess | [ur] Dictionary: 250001 types
+2021-08-04 21:47:41 | INFO | fairseq_cli.preprocess | [ur] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-ur.ur: 1001 sents, 40846 tokens, 0.00245% replaced by <unk>
+2021-08-04 21:47:41 | INFO | fairseq_cli.preprocess | [ur] Dictionary: 250001 types
+2021-08-04 21:47:41 | INFO | fairseq_cli.preprocess | [ur] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-ur.ur: 1001 sents, 40755 tokens, 0.00245% replaced by <unk>
+2021-08-04 21:47:41 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs_debug/bilingual
+
+Language 13
+Preprocessing en-vi
+Tokenizing....
+Tokenizing train.en-vi
+0it [00:00, ?it/s]5000it [00:00, 53421.91it/s]
+0it [00:00, ?it/s]5000it [00:00, 52104.84it/s]
+Tokenizing test.en-vi
+0it [00:00, ?it/s]1000it [00:00, 15674.37it/s]
+0it [00:00, ?it/s]1000it [00:00, 24826.45it/s]
+Tokenizing valid.en-vi
+0it [00:00, ?it/s]262it [00:00, 2619.64it/s]1000it [00:00, 8713.70it/s]
+0it [00:00, ?it/s]1000it [00:00, 20009.08it/s]
+Binarizing....
+2021-08-04 21:47:50 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs_debug/bilingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='en', srcdict='data/xlmr.base/dict.txt', target_lang='vi', task='xlmr_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-vi', tgtdict='data/xlmr.base/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-vi', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-vi', workers=1)
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-vi.en: 5001 sents, 50444 tokens, 0.00198% replaced by <unk>
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-vi.en: 1001 sents, 10216 tokens, 0.00979% replaced by <unk>
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-vi.en: 1001 sents, 10157 tokens, 0.00985% replaced by <unk>
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | [vi] Dictionary: 250001 types
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | [vi] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-vi.vi: 5001 sents, 59531 tokens, 0.00168% replaced by <unk>
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | [vi] Dictionary: 250001 types
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | [vi] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-vi.vi: 1001 sents, 11958 tokens, 0.00836% replaced by <unk>
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | [vi] Dictionary: 250001 types
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | [vi] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-vi.vi: 1001 sents, 12009 tokens, 0.00833% replaced by <unk>
+2021-08-04 21:47:51 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs_debug/bilingual
+
+Language 14
+Preprocessing en-zh
+Tokenizing....
+Tokenizing train.en-zh
+0it [00:00, ?it/s]1671it [00:00, 16705.44it/s]3342it [00:00, 16377.78it/s]5000it [00:00, 18268.73it/s]
+0it [00:00, ?it/s]1639it [00:00, 16389.00it/s]4491it [00:00, 23521.58it/s]5000it [00:00, 23502.29it/s]
+Tokenizing test.en-zh
+0it [00:00, ?it/s]1000it [00:00, 11344.82it/s]
+0it [00:00, ?it/s]1000it [00:00, 14622.81it/s]
+Tokenizing valid.en-zh
+0it [00:00, ?it/s]1000it [00:00, 10116.19it/s]
+0it [00:00, ?it/s]1000it [00:00, 12799.96it/s]
+Binarizing....
+2021-08-04 21:48:00 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs_debug/bilingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='en', srcdict='data/xlmr.base/dict.txt', target_lang='zh', task='xlmr_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-zh', tgtdict='data/xlmr.base/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-zh', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-zh', workers=1)
+2021-08-04 21:48:01 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:48:02 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-zh.en: 5001 sents, 187167 tokens, 0.000534% replaced by <unk>
+2021-08-04 21:48:02 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:48:03 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-zh.en: 1001 sents, 36254 tokens, 0.00276% replaced by <unk>
+2021-08-04 21:48:03 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 21:48:03 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-zh.en: 1001 sents, 35924 tokens, 0.00278% replaced by <unk>
+2021-08-04 21:48:03 | INFO | fairseq_cli.preprocess | [zh] Dictionary: 250001 types
+2021-08-04 21:48:04 | INFO | fairseq_cli.preprocess | [zh] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/train.en-zh.zh: 5001 sents, 157311 tokens, 0.00191% replaced by <unk>
+2021-08-04 21:48:04 | INFO | fairseq_cli.preprocess | [zh] Dictionary: 250001 types
+2021-08-04 21:48:04 | INFO | fairseq_cli.preprocess | [zh] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/valid.en-zh.zh: 1001 sents, 30342 tokens, 0.0297% replaced by <unk>
+2021-08-04 21:48:04 | INFO | fairseq_cli.preprocess | [zh] Dictionary: 250001 types
+2021-08-04 21:48:04 | INFO | fairseq_cli.preprocess | [zh] data/tokenized_XLM_pilot_run_21Langs_debug/bilingual/test.en-zh.zh: 1001 sents, 30537 tokens, 0.00327% replaced by <unk>
+2021-08-04 21:48:04 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs_debug/bilingual
+
+Done

@@ -6,10 +6,10 @@ python fairseq_cli/train.py --data data-bin/XLM_pilot_run_21Langs_debug \
     --use-mcl \
     --use-para-data \
     --use-tcl \
-    --task xlmr_xcl \
+    --task xlm_xcl \
     --arch xlmr_xcl_base \
     --max-sentences 5 \
-    --criterion xlmr_xcl \
+    --criterion xlm_xcl \
     --optimizer adam \
     --lr 0.0005 \
     --adam-betas "(0.9,0.98)" \

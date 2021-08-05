@@ -28,7 +28,7 @@ class Similarity(nn.Module):
         return self.cos(x, y) / self.temperature
 
 
-@register_criterion('xlmr_xcl')
+@register_criterion('xlm_xcl')
 class XlmXclLoss(FairseqCriterion):
     """
     Implementation for the loss used in masked language model (MLM) training.

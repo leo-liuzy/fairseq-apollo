@@ -386,7 +386,7 @@ def _upgrade_state_dict(state):
         )
 
     # set any missing default values in the task, model or other registries
-    from ipdb import set_trace; set_trace()
+    # from ipdb import set_trace; set_trace()
     registry.set_defaults(state["args"], tasks.TASK_REGISTRY[state["args"].task])
     registry.set_defaults(state["args"], models.ARCH_MODEL_REGISTRY[state["args"].arch])
     for registry_name, REGISTRY in registry.REGISTRIES.items():
