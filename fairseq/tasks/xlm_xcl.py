@@ -285,7 +285,7 @@ class XlmrXcl(FairseqTask):
             pad_idx=self.source_dictionary.pad(),
             left_pad=False,
         )
-        src_positions = PositionDataset(src_tokens, pad_idx=self.source_dictionary.pad())
+        src_positions = PositionDataset(src_mlm_input_dataset, pad_idx=self.source_dictionary.pad())
         src_positions = PadDataset(
             src_positions, pad_idx=self.source_dictionary.pad(), left_pad=False,
         )
@@ -321,7 +321,7 @@ class XlmrXcl(FairseqTask):
                 pad_idx=self.target_dictionary.pad(),
                 left_pad=False,
             )
-            tgt_positions = PositionDataset(tgt_tokens, pad_idx=self.target_dictionary.pad())
+            tgt_positions = PositionDataset(tgt_mlm_input_dataset, pad_idx=self.target_dictionary.pad())
             tgt_positions = PadDataset(
                 tgt_positions, pad_idx=self.target_dictionary.pad(), left_pad=False,
             )
