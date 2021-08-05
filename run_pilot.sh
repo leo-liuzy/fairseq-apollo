@@ -7,10 +7,9 @@ python fairseq_cli/train.py --data data-bin/XLM_pilot_run_21Langs_debug \
     --use-para-data \
     --use-tcl \
     --task xlmr_xcl \
-    # --restore-file data/xlmr.base/model.pt \
     --arch xlmr_xcl_base \
     --max-sentences 5 \
-    --criterion xlm_xcl \
+    --criterion xlmr_xcl \
     --optimizer adam \
     --lr 0.0005 \
     --adam-betas "(0.9,0.98)" \
@@ -27,3 +26,4 @@ python fairseq_cli/train.py --data data-bin/XLM_pilot_run_21Langs_debug \
     --log-format json \
     --tensorboard-logdir checkpoints/XLM_pilot_run_21Langs_debug/log
     # --dataset-impl "mmap" \
+    # --restore-file data/xlmr.base/model.pt \

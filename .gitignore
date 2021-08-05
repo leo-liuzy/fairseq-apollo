@@ -136,9 +136,11 @@ dmypy.json
 # data/
 data/raw_XLM_pilot_run_21Langs/**
 data/tokenized_XLM_pilot_run_21Langs/**/*
+
 data/xlm-roberta-base/
 data/para/**
 # data-bin/**/*
+data-bin/XLM_pilot_run_21Langs/
 **/xlmr.base/*
 **/xlmr.large/*
 # fairseq/data/**/*
