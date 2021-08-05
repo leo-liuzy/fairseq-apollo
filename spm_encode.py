@@ -16,5 +16,6 @@ sp = spm.SentencePieceProcessor(model_file=args.model)
 for line in tqdm(sys.stdin):
     encoded_line = sp.encode(line, out_type=str)
     sys.stdout.write(" ".join(encoded_line))
+    sys.stdout.write("\n")
 
 print("Done")

@@ -6,12 +6,12 @@
 lg_pair=$1
 DATA_DIR_ROOT="data"
 BIN_DATA_DIR_ROOT="data-bin"
-exp_name="XLM_pilot_run_21Langs_debug"
+exp_name="XLM_pilot_run_21Langs"
 raw_input_dir="raw_${exp_name}"
 tokenized_dir="tokenized_${exp_name}"
 dict_path="${DATA_DIR_ROOT}/xlmr.base/dict.txt"
 spm_path="${DATA_DIR_ROOT}/xlmr.base/sentencepiece.bpe.model"
-task=mluna_lm
+task=xlmr_xcl
 corpus_type=bilingual
 
 raw_para_dir="${raw_input_dir}/${corpus_type}"
@@ -28,7 +28,7 @@ echo "Tokenizing...."
 for split in train test valid; do
     echo "Tokenizing ${split}.${lg_pair}"
     for lg in $(echo $lg_pair | sed -e 's/\-/ /g'); do
-      input=${DATA_DIR_ROOT}/${raw_para_dir}/${split}.${lg_pair}.${lg}
+      input=${DATA_DIR_ROOT}/${raw_para_dir}/${lg_pair}.${lg}.${split}
       output=${DATA_DIR_ROOT}/${tokenized_para_dir}/${split}.${lg_pair}.${lg}
       python spm_encode.py --model=${spm_path} < "${input}" > "${output}"
     done

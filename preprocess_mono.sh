@@ -5,7 +5,7 @@
 lg=$1
 DATA_DIR_ROOT="data"
 BIN_DATA_DIR_ROOT="data-bin"
-exp_name="XLM_pilot_run_21Langs_debug"
+exp_name="XLM_pilot_run_21Langs"
 raw_input_dir="raw_${exp_name}"
 tokenized_dir="tokenized_${exp_name}"
 dict_path="${DATA_DIR_ROOT}/xlmr.base/dict.txt"
@@ -26,7 +26,8 @@ echo "Preprocessing ${lg}"
 echo "Tokenizing...."
 for split in train test valid; do
     echo "Tokenizing ${lg}.${split}"
-    input=${DATA_DIR_ROOT}/${raw_mono_dir}/${split}.${lg}
+    # input=${DATA_DIR_ROOT}/${raw_mono_dir}/${split}.${lg}
+    input=${DATA_DIR_ROOT}/${raw_mono_dir}/${lg}.${split}
     output=${DATA_DIR_ROOT}/${tokenized_mono_dir}/${split}.${lg}
     python spm_encode.py --model=${spm_path} < "${input}" > "${output}"
 done
