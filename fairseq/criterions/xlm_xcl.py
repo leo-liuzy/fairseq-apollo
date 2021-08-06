@@ -42,6 +42,7 @@ class XlmXclLoss(FairseqCriterion):
         if self.objective_use_mode == 'alter':
             self.use_mono = True  # internal counter of whether we use mono or para objective
         # metric used by contrastive learning
+        self.mask_idx = task.mask_idx
         self.mcl_similarity_metric = Similarity(self.task.args.temp_mcl)
         self.tcl_similarity_metric = Similarity(self.task.args.temp_tcl)
         # loss coefficient
@@ -53,28 +54,33 @@ class XlmXclLoss(FairseqCriterion):
         self.use_mcl = self.task.args.use_mcl
         self.use_tcl = self.task.args.use_tcl
 
-    def _get_attn_mask(self, output_ids):
-        attn_mask = output_ids.eq(self.padding_idx)
-
+    def _mask_helper(self, mask):
         # Rare: when all tokens are masked, project all tokens.
         # We use torch.where to avoid device-to-host transfers,
         # except on CPU where torch.where is not well supported
         # (see github.com/pytorch/pytorch/issues/26247).
         if self.tpu:
-            attn_mask = None  # always project all tokens on TPU
-        elif attn_mask.device == torch.device('cpu'):
-            if not attn_mask.any():
-                attn_mask = None
+            mask = None  # always project all tokens on TPU
+        elif mask.device == torch.device('cpu'):
+            if not mask.any():
+                mask = None
         else:
-            attn_mask = torch.where(
-                attn_mask.any(),
-                attn_mask,
-                attn_mask.new([True]),
+            mask = torch.where(
+                mask.any(),
+                mask,
+                mask.new([True]),
             )
-        return attn_mask
+        return mask
 
-    def _get_masked_tokens(self, output_ids):
-        return ~self._get_attn_mask(output_ids)
+    def _get_attn_mask(self, token_ids):
+        mask = token_ids.ne(self.padding_idx)
+        mask = self._mask_helper(mask)
+        return mask
+
+    def _get_masked_tokens(self, token_ids):
+        mask = token_ids.eq(self.mask_idx)
+        mask = self._mask_helper(mask)
+        return mask
 
     def _xlm_forward(self, model, sample, log_prefix, reduce=True):
         """Compute the loss for the given sample.
@@ -84,16 +90,17 @@ class XlmXclLoss(FairseqCriterion):
         2) the sample size, which is used as the denominator for the gradient
         3) logging outputs to display while training
         """
-        masked_tokens = self._get_masked_tokens(sample["target"])
+        model.eval()
+        masked_tokens = self._get_masked_tokens(sample['net_input']['src_tokens'])
         sample_size = masked_tokens.int().sum()
-
-        logits = model(**sample['net_input'], masked_tokens=masked_tokens)[0]
+        logits = model(**sample['net_input'])[0]
+        masked_tokens_logits = logits[masked_tokens, :]
         targets = model.get_targets(sample, [logits])
         if masked_tokens is not None:
             targets = targets[masked_tokens]
 
         loss = modules.cross_entropy(
-            logits.view(-1, logits.size(-1)),
+            masked_tokens_logits.view(-1, masked_tokens_logits.size(-1)),
             targets.view(-1),
             reduction='sum',
             ignore_index=self.padding_idx,
@@ -224,7 +231,7 @@ class XlmXclLoss(FairseqCriterion):
             loss += self.mlm_coeff * mlm_loss
             sample_size += mlm_sample_size
             logging_output.update(mlm_logging_output)
-
+            import transformers
             # mcl
             if self.use_mcl:
                 mcl_loss, mcl_sample_size, mcl_logging_output = self.mcl_forward(model, sample, reduce)

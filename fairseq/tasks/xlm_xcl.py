@@ -40,7 +40,7 @@ logger = logging.getLogger(__name__)
 
 
 class round_robin_sampler_generator():
-    def __init__(self, init_state=1):
+    def __init__(self, init_state=0):
         self.idx = init_state
 
     def __call__(self, x: list):
