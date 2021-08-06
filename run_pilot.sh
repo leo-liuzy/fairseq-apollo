@@ -23,7 +23,8 @@ python fairseq_cli/train.py --data data-bin/XLM_pilot_run_21Langs_debug \
     --max-update 100 \
     --save-dir checkpoints/XLM_pilot_run_21Langs_debug \
     --log-interval 2 \
-    --log-format json \
-    --tensorboard-logdir checkpoints/XLM_pilot_run_21Langs_debug/log
+    --log-format tqdm \
+    --tensorboard-logdir checkpoints/XLM_pilot_run_21Langs_debug/log \
+    --cpu
     # --dataset-impl "mmap" \
     # --restore-file data/xlmr.base/model.pt \

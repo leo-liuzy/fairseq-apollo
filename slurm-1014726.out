@@ -15,3 +15,832 @@ Tokenizing en.valid
 Binarizing....
 2021-08-04 20:27:27 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='en', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlmr_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
 2021-08-04 20:27:28 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 22:22:29 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs/monolingual/train.en: 55982677 sents, 2011129976 tokens, 0.000534% replaced by <unk>
+2021-08-04 22:22:29 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 22:22:30 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs/monolingual/valid.en: 5001 sents, 180171 tokens, 0.000555% replaced by <unk>
+2021-08-04 22:22:30 | INFO | fairseq_cli.preprocess | [en] Dictionary: 250001 types
+2021-08-04 22:22:30 | INFO | fairseq_cli.preprocess | [en] data/tokenized_XLM_pilot_run_21Langs/monolingual/test.en: 5001 sents, 178339 tokens, 0.000561% replaced by <unk>
+2021-08-04 22:22:30 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to data-bin/XLM_pilot_run_21Langs/monolingual
+Done
+
+Language 2
+Preprocessing ru
+Tokenizing....
+Tokenizing ru.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing ru.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing ru.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:22:35 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='ru', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:22:35 | INFO | fairseq_cli.preprocess | [ru] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.ru-None.ru.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.ru-None.ru.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.ru-None.ru.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.ru-None.ru.idx’: No such file or directory
+Done
+
+Language 3
+Preprocessing id
+Tokenizing....
+Tokenizing id.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing id.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing id.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:22:40 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='id', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:22:40 | INFO | fairseq_cli.preprocess | [id] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.id-None.id.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.id-None.id.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.id-None.id.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.id-None.id.idx’: No such file or directory
+Done
+
+Language 4
+Preprocessing vi
+Tokenizing....
+Tokenizing vi.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing vi.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing vi.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:22:45 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='vi', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:22:45 | INFO | fairseq_cli.preprocess | [vi] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.vi-None.vi.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.vi-None.vi.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.vi-None.vi.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.vi-None.vi.idx’: No such file or directory
+Done
+
+Language 5
+Preprocessing de
+Tokenizing....
+Tokenizing de.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing de.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing de.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:22:49 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='de', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:22:50 | INFO | fairseq_cli.preprocess | [de] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.de-None.de.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.de-None.de.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.de-None.de.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.de-None.de.idx’: No such file or directory
+Done
+
+Language 6
+Preprocessing fi
+Tokenizing....
+Tokenizing fi.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing fi.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing fi.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:22:54 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='fi', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:22:55 | INFO | fairseq_cli.preprocess | [fi] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.fi-None.fi.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.fi-None.fi.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.fi-None.fi.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.fi-None.fi.idx’: No such file or directory
+Done
+
+Language 7
+Preprocessing ja
+Tokenizing....
+Tokenizing ja.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing ja.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing ja.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:22:59 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='ja', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:22:59 | INFO | fairseq_cli.preprocess | [ja] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.ja-None.ja.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.ja-None.ja.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.ja-None.ja.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.ja-None.ja.idx’: No such file or directory
+Done
+
+Language 8
+Preprocessing es
+Tokenizing....
+Tokenizing es.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing es.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing es.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:23:04 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='es', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:23:04 | INFO | fairseq_cli.preprocess | [es] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.es-None.es.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.es-None.es.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.es-None.es.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.es-None.es.idx’: No such file or directory
+Done
+
+Language 9
+Preprocessing fr
+Tokenizing....
+Tokenizing fr.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing fr.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing fr.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:23:08 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='fr', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:23:09 | INFO | fairseq_cli.preprocess | [fr] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.fr-None.fr.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.fr-None.fr.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.fr-None.fr.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.fr-None.fr.idx’: No such file or directory
+Done
+
+Language 10
+Preprocessing ko
+Tokenizing....
+Tokenizing ko.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing ko.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing ko.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:23:13 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='ko', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:23:14 | INFO | fairseq_cli.preprocess | [ko] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.ko-None.ko.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.ko-None.ko.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.ko-None.ko.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.ko-None.ko.idx’: No such file or directory
+Done
+
+Language 11
+Preprocessing zh-Hans
+Tokenizing....
+Tokenizing zh-Hans.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing zh-Hans.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing zh-Hans.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:23:18 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='zh-Hans', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:23:19 | INFO | fairseq_cli.preprocess | [zh-Hans] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.zh-Hans-None.zh-Hans.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.zh-Hans-None.zh-Hans.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.zh-Hans-None.zh-Hans.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.zh-Hans-None.zh-Hans.idx’: No such file or directory
+Done
+
+Language 12
+Preprocessing bg
+Tokenizing....
+Tokenizing bg.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing bg.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing bg.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:23:23 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='bg', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:23:23 | INFO | fairseq_cli.preprocess | [bg] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.bg-None.bg.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.bg-None.bg.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.bg-None.bg.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.bg-None.bg.idx’: No such file or directory
+Done
+
+Language 13
+Preprocessing th
+Tokenizing....
+Tokenizing th.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing th.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing th.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:23:28 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='th', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:23:28 | INFO | fairseq_cli.preprocess | [th] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.th-None.th.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.th-None.th.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.th-None.th.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.th-None.th.idx’: No such file or directory
+Done
+
+Language 14
+Preprocessing el
+Tokenizing....
+Tokenizing el.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing el.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing el.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:23:32 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='el', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:23:33 | INFO | fairseq_cli.preprocess | [el] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.el-None.el.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.el-None.el.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.el-None.el.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.el-None.el.idx’: No such file or directory
+Done
+
+Language 15
+Preprocessing ar
+Tokenizing....
+Tokenizing ar.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing ar.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing ar.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:23:37 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='ar', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:23:37 | INFO | fairseq_cli.preprocess | [ar] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.ar-None.ar.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.ar-None.ar.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.ar-None.ar.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.ar-None.ar.idx’: No such file or directory
+Done
+
+Language 16
+Preprocessing tr
+Tokenizing....
+Tokenizing tr.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing tr.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing tr.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:23:42 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='tr', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:23:42 | INFO | fairseq_cli.preprocess | [tr] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.tr-None.tr.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.tr-None.tr.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.tr-None.tr.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.tr-None.tr.idx’: No such file or directory
+Done
+
+Language 17
+Preprocessing hi
+Tokenizing....
+Tokenizing hi.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing hi.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing hi.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:23:46 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='hi', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:23:47 | INFO | fairseq_cli.preprocess | [hi] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.hi-None.hi.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.hi-None.hi.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.hi-None.hi.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.hi-None.hi.idx’: No such file or directory
+Done
+
+Language 18
+Preprocessing bn
+Tokenizing....
+Tokenizing bn.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing bn.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing bn.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:23:51 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='bn', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:23:52 | INFO | fairseq_cli.preprocess | [bn] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.bn-None.bn.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.bn-None.bn.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.bn-None.bn.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.bn-None.bn.idx’: No such file or directory
+Done
+
+Language 19
+Preprocessing ur
+Tokenizing....
+Tokenizing ur.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing ur.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing ur.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:23:56 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='ur', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:23:56 | INFO | fairseq_cli.preprocess | [ur] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.ur-None.ur.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.ur-None.ur.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.ur-None.ur.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.ur-None.ur.idx’: No such file or directory
+Done
+
+Language 20
+Preprocessing te
+Tokenizing....
+Tokenizing te.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing te.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing te.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:24:01 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='te', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:24:01 | INFO | fairseq_cli.preprocess | [te] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.te-None.te.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.te-None.te.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.te-None.te.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.te-None.te.idx’: No such file or directory
+Done
+
+Language 21
+Preprocessing sw
+Tokenizing....
+Tokenizing sw.train
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing sw.test
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Tokenizing sw.valid
+Traceback (most recent call last):
+  File "spm_encode.py", line 5, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'
+Binarizing....
+2021-08-04 22:24:05 | INFO | fairseq_cli.preprocess | Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bf16=False, bpe='sentencepiece', checkpoint_suffix='', cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/XLM_pilot_run_21Langs/monolingual', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=True, optimizer=None, padding_factor=8, profile=False, quantization_config_path=None, seed=None, source_lang='sw', srcdict='data/xlmr.base/dict.txt', target_lang=None, task='xlm_xcl', tensorboard_logdir='', testpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/train', user_dir=None, validpref='data/tokenized_XLM_pilot_run_21Langs/monolingual/valid', workers=1)
+2021-08-04 22:24:06 | INFO | fairseq_cli.preprocess | [sw] Dictionary: 250001 types
+Traceback (most recent call last):
+  File "/home1/zliu9986/miniconda3/envs/mluna/bin/fairseq-preprocess", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-preprocess')())
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 360, in cli_main
+    main(args)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 259, in main
+    make_all(args.source_lang, src_dict)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 241, in make_all
+    make_dataset(vocab, args.trainpref, "train", lang, num_workers=args.workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 237, in make_dataset
+    make_binary_dataset(vocab, input_prefix, output_prefix, lang, num_workers)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq_cli/preprocess.py", line 169, in make_binary_dataset
+    100 * sum(replaced.values()) / n_seq_tok[1],
+ZeroDivisionError: division by zero
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.sw-None.sw.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/test.sw-None.sw.idx’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.sw-None.sw.bin’: No such file or directory
+mv: cannot stat ‘data-bin/XLM_pilot_run_21Langs/monolingual/valid.sw-None.sw.idx’: No such file or directory
+Done
+
+Done
