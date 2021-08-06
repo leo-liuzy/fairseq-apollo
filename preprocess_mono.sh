@@ -23,14 +23,14 @@ mkdir -p "$bin_destdir"
 
 echo "Preprocessing ${lg}"
 
-echo "Tokenizing...."
-for split in train test valid; do
-    echo "Tokenizing ${lg}.${split}"
-    # input=${DATA_DIR_ROOT}/${raw_mono_dir}/${split}.${lg}
-    input=${DATA_DIR_ROOT}/${raw_mono_dir}/${lg}.${split}
-    output=${DATA_DIR_ROOT}/${tokenized_mono_dir}/${split}.${lg}
-    python spm_encode.py --model=${spm_path} < "${input}" > "${output}"
-done
+# echo "Tokenizing...."
+# for split in train test valid; do
+#     echo "Tokenizing ${lg}.${split}"
+#     # input=${DATA_DIR_ROOT}/${raw_mono_dir}/${split}.${lg}
+#     input=${DATA_DIR_ROOT}/${raw_mono_dir}/${lg}.${split}
+#     output=${DATA_DIR_ROOT}/${tokenized_mono_dir}/${split}.${lg}
+#     python spm_encode.py --model=${spm_path} < "${input}" > "${output}"
+# done
 
 echo "Binarizing...."
 fairseq-preprocess --task ${task} \
