@@ -243,7 +243,8 @@ class XlmrXcl(FairseqTask):
             dataset = TokenBlockDataset(
                 dataset,
                 dataset.sizes,
-                self.args.tokens_per_sample - 1,  # one less for <s>
+                # one less for <s> and divided by 2 for TLM
+                self.args.tokens_per_sample // 2 - 1 if lang2 else self.args.tokens_per_sample - 1,
                 pad=self.source_dictionary.pad(),
                 eos=self.source_dictionary.eos(),
                 break_mode=self.args.para_sample_break_mode if lang2
