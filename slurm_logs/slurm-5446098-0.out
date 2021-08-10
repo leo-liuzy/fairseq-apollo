@@ -1,0 +1,437 @@
+==========================================
+SLURM_JOB_ID = 5446098
+SLURM_JOB_NODELIST = d13-02
+TMPDIR = /tmp/SLURM_5446098
+==========================================
+2021-08-10 10:17:47 | INFO | fairseq.distributed_utils | distributed init (rank 1): tcp://localhost:19170
+2021-08-10 10:17:47 | INFO | fairseq.distributed_utils | distributed init (rank 0): tcp://localhost:19170
+2021-08-10 10:17:54 | INFO | fairseq.distributed_utils | initialized host d13-02.hpc.usc.edu as rank 0
+2021-08-10 10:17:54 | INFO | fairseq.distributed_utils | initialized host d13-02.hpc.usc.edu as rank 1
+2021-08-10 10:17:54 | INFO | fairseq_cli.train | Namespace(activation_dropout=0.0, activation_fn='gelu', adam_betas='(0.9,0.98)', adam_eps=1e-08, all_gather_list_size=16384, arch='xlmr_xcl_base', attention_dropout=0.1, best_checkpoint_metric='loss', bf16=False, bpe=None, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_suffix='', clip_mode='total', clip_norm=1.0, cpu=False, criterion='xlm_xcl', curriculum=0, data='/home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs', data_buffer_size=10, dataset_impl=None, ddp_backend='c10d', device_id=0, disable_validation=False, distributed_backend='nccl', distributed_init_method='tcp://localhost:19170', distributed_no_spawn=False, distributed_port=-1, distributed_rank=0, distributed_world_size=2, distributed_wrapper='DDP', dropout=0.1, empty_cache_freq=0, encoder_attention_heads=12, encoder_embed_dim=768, encoder_ffn_embed_dim=3072, encoder_layerdrop=0, encoder_layers=12, encoder_layers_to_keep=None, fast_stat_sync=False, find_unused_parameters=False, finetune_from_model=None, fix_batches_to_gpus=False, fixed_validation_seed=None, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, freq_weighted_replacement=False, keep_best_checkpoints=-1, keep_interval_updates=-1, keep_last_epochs=-1, lang_batch_sampler=<fairseq.tasks.xlm_xcl.round_robin_sampler_generator object at 0x7fcb4a4f9940>, lang_pairs='ar-en:bg-en:de-en:el-en:en-es:en-fr:en-hi:en-ru:en-sw:en-th:en-tr:en-ur:en-vi:en-zh', langs='en:ar:bg:bn:de:el:es:fi:fr:hi:id:ja:ko:ru:sw:te:th:tr:ur:vi:zh-Hans', leave_unmasked_prob=0.1, localsgd_frequency=3, log_format='json', log_interval=20, lr=[0.0005], lr_scheduler='inverse_sqrt', mask_prob=0.15, mask_whole_words=False, max_epoch=0, max_sentences=6, max_sentences_valid=6, max_tokens=None, max_tokens_valid=None, max_update=52000, maximize_best_checkpoint_metric=False, mcl_coeff=1.0, memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, min_lr=-1, mlm_coeff=1.0, model_parallel_size=1, mono_sample_break_mode='complete', multilang_mono_sampling_alpha=1.0, multilang_para_sampling_alpha=1.0, no_epoch_checkpoints=False, no_last_checkpoints=False, no_progress_bar=False, no_save=False, no_save_optimizer_state=False, no_seed_provided=False, nprocs_per_node=2, num_workers=1, objective_use_mode='all', optimizer='adam', optimizer_overrides='{}', para_sample_break_mode='eos', patience=-1, pooler_activation_fn='tanh', pooler_dropout=0.0, pooler_type='cls', profile=False, quant_noise_pq=0, quant_noise_pq_block_size=8, quant_noise_scalar=0, quantization_config_path=None, random_token_prob=0.1, required_batch_size_multiple=8, reset_dataloader=False, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=False, restore_file='data/xlmr.base/model.pt', save_dir='/home1/zliu9986/fairseq-apollo/checkpoints/bszPerGPU6_lr0.0005_update52000XLM_pilot_run_21Langs_XLM+XCL', save_interval=1, save_interval_updates=0, seed=42, sentence_avg=False, skip_invalid_size_inputs_valid_test=False, slowmo_algorithm='LocalSGD', slowmo_momentum=None, stop_time_hours=0, task='xlm_xcl', tcl_coeff=1.0, temp_mcl=1.0, temp_tcl=1.0, tensorboard_logdir='/home1/zliu9986/fairseq-apollo/checkpoints/bszPerGPU6_lr0.0005_update52000XLM_pilot_run_21Langs_XLM+XCL/log', threshold_loss_scale=None, tlm_coeff=1.0, tokenizer=None, tokens_per_sample=512, tpu=False, train_subset='train', update_freq=[1], use_bmuf=False, use_mcl=True, use_mono_data=True, use_old_adam=False, use_para_data=True, use_tcl=True, user_dir=None, valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, warmup_init_lr=1e-07, warmup_updates=4000, weight_decay=0.0001)
+2021-08-10 10:17:54 | INFO | fairseq.tasks.xlm_xcl | dictionary: 250001 types
+2021-08-10 10:17:54 | INFO | fairseq.tasks.xlm_xcl | Training on 21 languages: ['ar', 'bg', 'bn', 'de', 'el', 'en', 'es', 'fi', 'fr', 'hi', 'id', 'ja', 'ko', 'ru', 'sw', 'te', 'th', 'tr', 'ur', 'vi', 'zh-Hans']
+2021-08-10 10:17:54 | INFO | fairseq.tasks.xlm_xcl | Language to id mapping: {'ar': 0, 'bg': 1, 'bn': 2, 'de': 3, 'el': 4, 'en': 5, 'es': 6, 'fi': 7, 'fr': 8, 'hi': 9, 'id': 10, 'ja': 11, 'ko': 12, 'ru': 13, 'sw': 14, 'te': 15, 'th': 16, 'tr': 17, 'ur': 18, 'vi': 19, 'zh-Hans': 20}
+2021-08-10 10:17:54 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ar/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 515 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ar/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/bg/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 455 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/bg/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/bn/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 200 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/bn/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/de/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 450 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/de/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/el/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 456 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/el/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/en/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 372 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/en/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/es/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 381 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/es/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/fi/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 420 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/fi/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/fr/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 395 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/fr/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/hi/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 255 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/hi/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/id/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 371 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/id/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ja/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 344 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ja/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ko/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 404 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ko/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ru/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 541 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ru/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/sw/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 362 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/sw/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/te/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 380 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/te/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/th/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 290 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/th/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/tr/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 466 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/tr/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ur/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 387 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ur/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/vi/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 346 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/vi/valid
+2021-08-10 10:17:55 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/zh-Hans/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded 631 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/zh-Hans/valid
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | loaded total 8421.0 blocks for all languages
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | Training on 14 language pairs: ['ar-en', 'bg-en', 'de-en', 'el-en', 'en-es', 'en-fr', 'en-hi', 'en-ru', 'en-sw', 'en-th', 'en-tr', 'en-ur', 'en-vi', 'en-zh']
+2021-08-10 10:17:55 | INFO | fairseq.tasks.xlm_xcl | Language pair to id mapping: {'ar-en': 0, 'bg-en': 1, 'de-en': 2, 'el-en': 3, 'en-es': 4, 'en-fr': 5, 'en-hi': 6, 'en-ru': 7, 'en-sw': 8, 'en-th': 9, 'en-tr': 10, 'en-ur': 11, 'en-vi': 12, 'en-zh': 13}
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/ar-en/valid.ar
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/ar-en/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/ar-en/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/ar-en/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/bg-en/valid.bg
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/bg-en/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/bg-en/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/bg-en/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/de-en/valid.de
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/de-en/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/de-en/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/de-en/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/el-en/valid.el
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/el-en/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/el-en/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/el-en/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-es/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-es/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-es/valid.es
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-es/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-fr/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-fr/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-fr/valid.fr
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-fr/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-hi/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-hi/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-hi/valid.hi
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-hi/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ru/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ru/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ru/valid.ru
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ru/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-sw/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-sw/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-sw/valid.sw
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-sw/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-th/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-th/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-th/valid.th
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-th/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-tr/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-tr/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-tr/valid.tr
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-tr/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ur/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ur/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ur/valid.ur
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ur/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-vi/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-vi/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-vi/valid.vi
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-vi/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-zh/valid.en
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-zh/valid
+2021-08-10 10:17:56 | INFO | fairseq.data.data_utils | loaded 5001 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-zh/valid.zh
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded 5001 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-zh/valid
+2021-08-10 10:17:56 | INFO | fairseq.tasks.xlm_xcl | loaded total 140028.0 blocks for all languages
+2021-08-10 10:18:04 | INFO | fairseq_cli.train | XLMRXCLModel(
+  (encoder): RobertaEncoder(
+    (sentence_encoder): TransformerSentenceEncoder(
+      (dropout_module): FairseqDropout()
+      (embed_tokens): Embedding(250002, 768, padding_idx=1)
+      (embed_positions): LearnedPositionalEmbedding(514, 768, padding_idx=1)
+      (layers): ModuleList(
+        (0): TransformerSentenceEncoderLayer(
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+        (1): TransformerSentenceEncoderLayer(
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+        (2): TransformerSentenceEncoderLayer(
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+        (3): TransformerSentenceEncoderLayer(
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+        (4): TransformerSentenceEncoderLayer(
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+        (5): TransformerSentenceEncoderLayer(
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+        (6): TransformerSentenceEncoderLayer(
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+        (7): TransformerSentenceEncoderLayer(
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+        (8): TransformerSentenceEncoderLayer(
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+        (9): TransformerSentenceEncoderLayer(
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+        (10): TransformerSentenceEncoderLayer(
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+        (11): TransformerSentenceEncoderLayer(
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (emb_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    )
+    (lm_head): RobertaLMHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+  (classification_heads): ModuleDict()
+  (pooler): Pooler()
+)
+2021-08-10 10:18:04 | INFO | fairseq_cli.train | task: xlm_xcl (XlmrXcl)
+2021-08-10 10:18:04 | INFO | fairseq_cli.train | model: xlmr_xcl_base (XLMRXCLModel)
+2021-08-10 10:18:04 | INFO | fairseq_cli.train | criterion: xlm_xcl (XlmXclLoss)
+2021-08-10 10:18:04 | INFO | fairseq_cli.train | num. model params: 278294418 (num. trained: 278294418)
+2021-08-10 10:18:04 | INFO | fairseq.trainer | detected shared parameter: encoder.sentence_encoder.embed_tokens.weight <- encoder.lm_head.weight
+2021-08-10 10:18:04 | INFO | fairseq.utils | ***********************CUDA enviroments for all 2 workers***********************
+2021-08-10 10:18:04 | INFO | fairseq.utils | rank   0: capabilities =  7.0  ; total memory = 31.749 GB ; name = Tesla V100-PCIE-32GB                    
+2021-08-10 10:18:04 | INFO | fairseq.utils | rank   1: capabilities =  7.0  ; total memory = 31.749 GB ; name = Tesla V100-PCIE-32GB                    
+2021-08-10 10:18:04 | INFO | fairseq.utils | ***********************CUDA enviroments for all 2 workers***********************
+2021-08-10 10:18:04 | INFO | fairseq_cli.train | training on 2 devices (GPUs/TPUs)
+2021-08-10 10:18:04 | INFO | fairseq_cli.train | max tokens per GPU = None and max sentences per GPU = 6
+2021-08-10 10:18:07 | INFO | fairseq.trainer | loaded checkpoint data/xlmr.base/model.pt (epoch 1 @ 0 updates)
+2021-08-10 10:18:07 | INFO | fairseq.trainer | NOTE: your device may support faster training with --fp16
+2021-08-10 10:18:07 | INFO | fairseq.trainer | loading train data for epoch 1
+2021-08-10 10:18:07 | INFO | fairseq.tasks.xlm_xcl | Training on 21 languages: ['ar', 'bg', 'bn', 'de', 'el', 'en', 'es', 'fi', 'fr', 'hi', 'id', 'ja', 'ko', 'ru', 'sw', 'te', 'th', 'tr', 'ur', 'vi', 'zh-Hans']
+2021-08-10 10:18:07 | INFO | fairseq.tasks.xlm_xcl | Language to id mapping: {'ar': 0, 'bg': 1, 'bn': 2, 'de': 3, 'el': 4, 'en': 5, 'es': 6, 'fi': 7, 'fr': 8, 'hi': 9, 'id': 10, 'ja': 11, 'ko': 12, 'ru': 13, 'sw': 14, 'te': 15, 'th': 16, 'tr': 17, 'ur': 18, 'vi': 19, 'zh-Hans': 20}
+2021-08-10 10:18:12 | INFO | fairseq.data.data_utils | loaded 14863505 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ar/train
+2021-08-10 10:18:13 | INFO | fairseq.tasks.xlm_xcl | loaded 1515190 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ar/train
+2021-08-10 10:18:20 | INFO | fairseq.data.data_utils | loaded 16369808 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/bg/train
+2021-08-10 10:18:21 | INFO | fairseq.tasks.xlm_xcl | loaded 1484813 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/bg/train
+2021-08-10 10:18:22 | INFO | fairseq.data.data_utils | loaded 13782640 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/bn/train
+2021-08-10 10:18:23 | INFO | fairseq.tasks.xlm_xcl | loaded 549585 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/bn/train
+2021-08-10 10:18:31 | INFO | fairseq.data.data_utils | loaded 30049180 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/de/train
+2021-08-10 10:18:32 | INFO | fairseq.tasks.xlm_xcl | loaded 2718031 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/de/train
+2021-08-10 10:18:37 | INFO | fairseq.data.data_utils | loaded 15843578 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/el/train
+2021-08-10 10:18:38 | INFO | fairseq.tasks.xlm_xcl | loaded 1434861 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/el/train
+2021-08-10 10:18:50 | INFO | fairseq.data.data_utils | loaded 55982677 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/en/train
+2021-08-10 10:18:52 | INFO | fairseq.tasks.xlm_xcl | loaded 4159060 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/en/train
+2021-08-10 10:19:00 | INFO | fairseq.data.data_utils | loaded 33434310 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/es/train
+2021-08-10 10:19:01 | INFO | fairseq.tasks.xlm_xcl | loaded 2498799 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/es/train
+2021-08-10 10:19:07 | INFO | fairseq.data.data_utils | loaded 29113394 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/fi/train
+2021-08-10 10:19:09 | INFO | fairseq.tasks.xlm_xcl | loaded 2489197 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/fi/train
+2021-08-10 10:19:16 | INFO | fairseq.data.data_utils | loaded 35374907 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/fr/train
+2021-08-10 10:19:18 | INFO | fairseq.tasks.xlm_xcl | loaded 2842739 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/fr/train
+2021-08-10 10:19:20 | INFO | fairseq.data.data_utils | loaded 14341769 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/hi/train
+2021-08-10 10:19:21 | INFO | fairseq.tasks.xlm_xcl | loaded 744226 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/hi/train
+2021-08-10 10:19:30 | INFO | fairseq.data.data_utils | loaded 43109830 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/id/train
+2021-08-10 10:19:32 | INFO | fairseq.tasks.xlm_xcl | loaded 3169451 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/id/train
+2021-08-10 10:19:36 | INFO | fairseq.data.data_utils | loaded 13219090 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ja/train
+2021-08-10 10:19:36 | INFO | fairseq.tasks.xlm_xcl | loaded 915593 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ja/train
+2021-08-10 10:19:43 | INFO | fairseq.data.data_utils | loaded 28781703 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ko/train
+2021-08-10 10:19:44 | INFO | fairseq.tasks.xlm_xcl | loaded 2324068 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ko/train
+2021-08-10 10:19:50 | INFO | fairseq.data.data_utils | loaded 18921097 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ru/train
+2021-08-10 10:19:51 | INFO | fairseq.tasks.xlm_xcl | loaded 2094761 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ru/train
+2021-08-10 10:19:53 | INFO | fairseq.data.data_utils | loaded 12650807 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/sw/train
+2021-08-10 10:19:54 | INFO | fairseq.tasks.xlm_xcl | loaded 946743 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/sw/train
+2021-08-10 10:19:55 | INFO | fairseq.data.data_utils | loaded 5942033 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/te/train
+2021-08-10 10:19:56 | INFO | fairseq.tasks.xlm_xcl | loaded 446710 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/te/train
+2021-08-10 10:19:58 | INFO | fairseq.data.data_utils | loaded 12872454 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/th/train
+2021-08-10 10:19:58 | INFO | fairseq.tasks.xlm_xcl | loaded 720842 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/th/train
+2021-08-10 10:20:02 | INFO | fairseq.data.data_utils | loaded 19541971 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/tr/train
+2021-08-10 10:20:03 | INFO | fairseq.tasks.xlm_xcl | loaded 1843642 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/tr/train
+2021-08-10 10:20:06 | INFO | fairseq.data.data_utils | loaded 10778342 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ur/train
+2021-08-10 10:20:07 | INFO | fairseq.tasks.xlm_xcl | loaded 841491 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/ur/train
+2021-08-10 10:20:15 | INFO | fairseq.data.data_utils | loaded 45492759 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/vi/train
+2021-08-10 10:20:17 | INFO | fairseq.tasks.xlm_xcl | loaded 3047077 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/vi/train
+2021-08-10 10:20:19 | INFO | fairseq.data.data_utils | loaded 7110951 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/zh-Hans/train
+2021-08-10 10:20:20 | INFO | fairseq.tasks.xlm_xcl | loaded 918753 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/monolingual/zh-Hans/train
+2021-08-10 10:20:20 | INFO | fairseq.tasks.xlm_xcl | loaded total 37705632.0 blocks for all languages
+2021-08-10 10:20:20 | INFO | fairseq.tasks.xlm_xcl | Sample probability by language (pair): 
+2021-08-10 10:20:20 | INFO | fairseq.tasks.xlm_xcl | Up/Down Sampling ratio by language (pair): 
+2021-08-10 10:20:23 | INFO | fairseq.tasks.xlm_xcl | Training on 14 language pairs: ['ar-en', 'bg-en', 'de-en', 'el-en', 'en-es', 'en-fr', 'en-hi', 'en-ru', 'en-sw', 'en-th', 'en-tr', 'en-ur', 'en-vi', 'en-zh']
+2021-08-10 10:20:23 | INFO | fairseq.tasks.xlm_xcl | Language pair to id mapping: {'ar-en': 0, 'bg-en': 1, 'de-en': 2, 'el-en': 3, 'en-es': 4, 'en-fr': 5, 'en-hi': 6, 'en-ru': 7, 'en-sw': 8, 'en-th': 9, 'en-tr': 10, 'en-ur': 11, 'en-vi': 12, 'en-zh': 13}
+2021-08-10 10:20:26 | INFO | fairseq.data.data_utils | loaded 9749126 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/ar-en/train.ar
+2021-08-10 10:20:26 | INFO | fairseq.tasks.xlm_xcl | loaded 9749126 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/ar-en/train
+2021-08-10 10:20:29 | INFO | fairseq.data.data_utils | loaded 9749126 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/ar-en/train.en
+2021-08-10 10:20:29 | INFO | fairseq.tasks.xlm_xcl | loaded 9749126 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/ar-en/train
+2021-08-10 10:20:31 | INFO | fairseq.data.data_utils | loaded 618202 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/bg-en/train.bg
+2021-08-10 10:20:31 | INFO | fairseq.tasks.xlm_xcl | loaded 618202 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/bg-en/train
+2021-08-10 10:20:31 | INFO | fairseq.data.data_utils | loaded 618202 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/bg-en/train.en
+2021-08-10 10:20:31 | INFO | fairseq.tasks.xlm_xcl | loaded 618202 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/bg-en/train
+2021-08-10 10:20:33 | INFO | fairseq.data.data_utils | loaded 9323067 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/de-en/train.de
+2021-08-10 10:20:33 | INFO | fairseq.tasks.xlm_xcl | loaded 9323067 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/de-en/train
+2021-08-10 10:20:35 | INFO | fairseq.data.data_utils | loaded 9323067 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/de-en/train.en
+2021-08-10 10:20:36 | INFO | fairseq.tasks.xlm_xcl | loaded 9323067 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/de-en/train
+2021-08-10 10:20:39 | INFO | fairseq.data.data_utils | loaded 4012953 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/el-en/train.el
+2021-08-10 10:20:39 | INFO | fairseq.tasks.xlm_xcl | loaded 4012953 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/el-en/train
+2021-08-10 10:20:40 | INFO | fairseq.data.data_utils | loaded 4012953 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/el-en/train.en
+2021-08-10 10:20:40 | INFO | fairseq.tasks.xlm_xcl | loaded 4012953 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/el-en/train
+2021-08-10 10:20:43 | INFO | fairseq.data.data_utils | loaded 11340968 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-es/train.en
+2021-08-10 10:20:44 | INFO | fairseq.tasks.xlm_xcl | loaded 11340968 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-es/train
+2021-08-10 10:20:46 | INFO | fairseq.data.data_utils | loaded 11340968 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-es/train.es
+2021-08-10 10:20:47 | INFO | fairseq.tasks.xlm_xcl | loaded 11340968 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-es/train
+2021-08-10 10:20:51 | INFO | fairseq.data.data_utils | loaded 13162020 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-fr/train.en
+2021-08-10 10:20:52 | INFO | fairseq.tasks.xlm_xcl | loaded 13162020 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-fr/train
+2021-08-10 10:20:56 | INFO | fairseq.data.data_utils | loaded 13162020 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-fr/train.fr
+2021-08-10 10:20:57 | INFO | fairseq.tasks.xlm_xcl | loaded 13162020 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-fr/train
+2021-08-10 10:20:59 | INFO | fairseq.data.data_utils | loaded 1599683 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-hi/train.en
+2021-08-10 10:20:59 | INFO | fairseq.tasks.xlm_xcl | loaded 1599683 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-hi/train
+2021-08-10 10:20:59 | INFO | fairseq.data.data_utils | loaded 1599683 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-hi/train.hi
+2021-08-10 10:20:59 | INFO | fairseq.tasks.xlm_xcl | loaded 1599683 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-hi/train
+2021-08-10 10:21:02 | INFO | fairseq.data.data_utils | loaded 11644417 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ru/train.en
+2021-08-10 10:21:02 | INFO | fairseq.tasks.xlm_xcl | loaded 11644417 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ru/train
+2021-08-10 10:21:06 | INFO | fairseq.data.data_utils | loaded 11644417 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ru/train.ru
+2021-08-10 10:21:06 | INFO | fairseq.tasks.xlm_xcl | loaded 11644417 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ru/train
+2021-08-10 10:21:08 | INFO | fairseq.data.data_utils | loaded 154287 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-sw/train.en
+2021-08-10 10:21:08 | INFO | fairseq.tasks.xlm_xcl | loaded 154287 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-sw/train
+2021-08-10 10:21:08 | INFO | fairseq.data.data_utils | loaded 154287 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-sw/train.sw
+2021-08-10 10:21:08 | INFO | fairseq.tasks.xlm_xcl | loaded 154287 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-sw/train
+2021-08-10 10:21:08 | INFO | fairseq.data.data_utils | loaded 3271534 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-th/train.en
+2021-08-10 10:21:08 | INFO | fairseq.tasks.xlm_xcl | loaded 3271534 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-th/train
+2021-08-10 10:21:09 | INFO | fairseq.data.data_utils | loaded 3271534 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-th/train.th
+2021-08-10 10:21:09 | INFO | fairseq.tasks.xlm_xcl | loaded 3271534 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-th/train
+2021-08-10 10:21:10 | INFO | fairseq.data.data_utils | loaded 494686 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-tr/train.en
+2021-08-10 10:21:10 | INFO | fairseq.tasks.xlm_xcl | loaded 494686 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-tr/train
+2021-08-10 10:21:10 | INFO | fairseq.data.data_utils | loaded 494686 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-tr/train.tr
+2021-08-10 10:21:10 | INFO | fairseq.tasks.xlm_xcl | loaded 494686 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-tr/train
+2021-08-10 10:21:11 | INFO | fairseq.data.data_utils | loaded 738321 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ur/train.en
+2021-08-10 10:21:11 | INFO | fairseq.tasks.xlm_xcl | loaded 738321 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ur/train
+2021-08-10 10:21:11 | INFO | fairseq.data.data_utils | loaded 738321 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ur/train.ur
+2021-08-10 10:21:11 | INFO | fairseq.tasks.xlm_xcl | loaded 738321 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-ur/train
+2021-08-10 10:21:12 | INFO | fairseq.data.data_utils | loaded 3495277 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-vi/train.en
+2021-08-10 10:21:12 | INFO | fairseq.tasks.xlm_xcl | loaded 3495277 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-vi/train
+2021-08-10 10:21:12 | INFO | fairseq.data.data_utils | loaded 3495277 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-vi/train.vi
+2021-08-10 10:21:12 | INFO | fairseq.tasks.xlm_xcl | loaded 3495277 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-vi/train
+2021-08-10 10:21:15 | INFO | fairseq.data.data_utils | loaded 9554316 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-zh/train.en
+2021-08-10 10:21:16 | INFO | fairseq.tasks.xlm_xcl | loaded 9554316 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-zh/train
+2021-08-10 10:21:18 | INFO | fairseq.data.data_utils | loaded 9554316 examples from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-zh/train.zh
+2021-08-10 10:21:18 | INFO | fairseq.tasks.xlm_xcl | loaded 9554316 blocks from: /home1/zliu9986/fairseq-apollo/data-bin/XLM_pilot_run_21Langs/bilingual/en-zh/train
+2021-08-10 10:21:19 | INFO | fairseq.tasks.xlm_xcl | loaded total 158317714.0 blocks for all languages
+2021-08-10 10:21:19 | INFO | fairseq.tasks.xlm_xcl | Sample probability by language (pair): 
+2021-08-10 10:21:19 | INFO | fairseq.tasks.xlm_xcl | Up/Down Sampling ratio by language (pair): 
+2021-08-10 10:44:07 | WARNING | fairseq.tasks.fairseq_task | 967145 samples have invalid sizes and will be skipped, max_positions=512, first few sample ids=[37546769, 37546770, 37546771, 37546772, 37546773, 37546774, 37546775, 37546776, 37546777, 37546778]
+2021-08-10 10:44:43 | WARNING | fairseq.tasks.fairseq_task | 967145 samples have invalid sizes and will be skipped, max_positions=512, first few sample ids=[37546769, 37546770, 37546771, 37546772, 37546773, 37546774, 37546775, 37546776, 37546777, 37546778]

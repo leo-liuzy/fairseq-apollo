@@ -998,3 +998,4 @@
 ▁El ▁V PH ▁genital ▁es ▁un ▁virus ▁que ▁se ▁transmite ▁de ▁una ▁persona ▁a ▁otra ▁por ▁contacto ▁directo ▁de ▁piel ▁con ▁piel ▁durante ▁las ▁relaciones ▁sexual es .
 ▁Utili ce ▁el ▁teclado ▁para ▁introduc ir ▁el ▁número ▁de ▁registro .
 ▁Pues ▁sigui endo ▁con ▁esta ▁idea , ▁esta ▁tarde ▁he ▁i do ▁hasta ▁Ses eña , ▁qui zás ▁el ▁lugar ▁con ▁mayor ▁probabilidad ▁de ▁que ▁algo ▁así ▁su ce da , ▁en ▁busca ▁de ▁la ▁camp a ▁ideal ▁para ▁la ▁práctica ▁de ▁este ▁deporte .
+Done

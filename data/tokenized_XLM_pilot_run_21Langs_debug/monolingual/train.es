@@ -4998,3 +4998,4 @@
 ▁Com i enza ▁la ▁segunda ▁fase ▁de ▁la ▁L IGA ▁2015
 ▁en ▁que ▁se ▁toma ▁la ▁decisión ▁de ▁poner ▁en
 ▁El ▁promedio ▁del ▁equivalente ▁en ▁líquido ▁de ▁la ▁nie ve ▁en ▁un ▁periodo ▁móvil ▁de ▁31 ▁días ▁en ▁diciembre ▁en ▁Hol com b ▁es ▁esencial mente ▁constante , ▁permane ciendo ▁en ▁aproximadamente ▁4 ▁mil íme tros , ▁y ▁rara ▁vez ▁excede ▁18 ▁mil íme tros ▁o ▁baja ▁a ▁menos ▁de ▁ -0 ▁mil íme tros .
+Done

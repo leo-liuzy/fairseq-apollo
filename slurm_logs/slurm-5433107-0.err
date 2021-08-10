@@ -1,0 +1,17 @@
+/home1/zliu9986/miniconda3/envs/mluna/lib/python3.8/site-packages/torch/nn/parallel/distributed.py:397: UserWarning: The `check_reduction` argument in `DistributedDataParallel` module is deprecated. Please avoid using it.
+  warnings.warn(
+Traceback (most recent call last):
+  File "fairseq_cli/train.py", line 338, in <module>
+    cli_main()
+  File "fairseq_cli/train.py", line 334, in cli_main
+    distributed_utils.call_main(args, main)
+  File "/scratch/zliu9986/fairseq-apollo/fairseq/distributed_utils.py", line 169, in call_main
+    torch.multiprocessing.spawn(
+  File "/home1/zliu9986/miniconda3/envs/mluna/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 199, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home1/zliu9986/miniconda3/envs/mluna/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 157, in start_processes
+    while not context.join():
+  File "/home1/zliu9986/miniconda3/envs/mluna/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 105, in join
+    raise Exception(
+Exception: process 1 terminated with signal SIGKILL
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=5433107.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
