@@ -29,3 +29,4 @@ python fairseq_cli/train.py --data data-bin/XLM_pilot_run_21Langs_debug \
     # --model-parallel-size 2
     # --cpu
     # --dataset-impl "mmap" \
+
