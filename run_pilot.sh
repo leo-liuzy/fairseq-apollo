@@ -8,12 +8,11 @@ python fairseq_cli/train.py --data data-bin/XLM_pilot_run_21Langs_debug \
     --use-tcl \
     --task xlm_xcl \
     --arch xlmr_xcl_base \
-    --max-sentences 8 \
+    --max-sentences 6 \
     --criterion xlm_xcl \
     --optimizer adam \
     --lr 0.0005 \
     --adam-betas "(0.9,0.98)" \
-    --dropout 0.1 \
     --clip-norm 1.0 \
     --lr-scheduler inverse_sqrt \
     --warmup-updates 4000 \
@@ -22,10 +21,11 @@ python fairseq_cli/train.py --data data-bin/XLM_pilot_run_21Langs_debug \
     --seed 42 \
     --max-update 100 \
     --save-dir checkpoints/XLM_pilot_run_21Langs_debug \
-    --log-interval 100 \
+    --log-interval 1 \
     --log-format json \
     --tensorboard-logdir checkpoints/XLM_pilot_run_21Langs_debug/log \
     --restore-file data/xlmr.base/model.pt \
+    # --dropout 0.1 \
     # --model-parallel-size 2
     # --cpu
     # --dataset-impl "mmap" \
