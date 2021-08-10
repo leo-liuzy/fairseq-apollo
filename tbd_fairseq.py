@@ -1,7 +1,7 @@
 import numpy as np
 import fairseq
 from fairseq import utils, modules
-from fairseq.models.roberta.model_xlmr import XLMRXCLModel
+from fairseq.models.roberta.model_xlmr import XLMRModel
 import torch
 
 
@@ -9,7 +9,9 @@ seed = 42
 np.random.seed(seed)
 utils.set_torch_seed(seed)
 
-model = XLMRXCLModel.from_pretrained("data/xlmr.base").model
+# use XLM loss
+temp = XLMRModel.from_pretrained("data/xlmr.base",)
+model = temp.model
 model.eval()
 input = torch.load('mlm_input.pt')
 masked_tokens = input['net_input']['src_tokens'].eq(250001)

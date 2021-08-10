@@ -141,7 +141,7 @@ def base_architecture(args):
     # (Leo): xlmr use learned embedding
     args.dropout = getattr(args, 'dropout', 0.1)  # (Leo): this includes embedding dropout
     args.attention_dropout = getattr(args, 'attention_dropout', 0.1)
-    args.activation_dropout = getattr(args, 'activation_dropout', 0.1)
+    args.activation_dropout = getattr(args, 'activation_dropout', 0.0)
     args.pooler_dropout = getattr(args, 'pooler_dropout', 0.0)
     args.encoder_layers_to_keep = getattr(args, 'encoder_layers_to_keep', None)
     args.encoder_layerdrop = getattr(args, 'encoder_layerdrop', 0.0)

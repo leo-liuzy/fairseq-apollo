@@ -8,6 +8,7 @@ import math
 import torch
 import torch.nn.functional as F
 from torch import nn
+import torch.distributed as dist
 
 from collections import defaultdict
 from fairseq import metrics, modules, utils
@@ -90,7 +91,7 @@ class XlmXclLoss(FairseqCriterion):
         2) the sample size, which is used as the denominator for the gradient
         3) logging outputs to display while training
         """
-        model.eval()
+        model.train()
         masked_tokens = self._get_masked_tokens(sample['net_input']['src_tokens'])
         sample_size = masked_tokens.int().sum()
         logits = model(**sample['net_input'])[0]
@@ -112,6 +113,7 @@ class XlmXclLoss(FairseqCriterion):
             f'{log_prefix}_nsentences': sample['nsentences'],
             f'{log_prefix}_sample_size': sample_size,
         }
+
         return loss, sample_size, logging_output
 
     def mlm_forward(self, model, sample, reduce=True):
@@ -154,21 +156,20 @@ class XlmXclLoss(FairseqCriterion):
         encoder = model.encoder
         attn_mask = self._get_attn_mask(sample['net_input']["src_tokens"])
         sample_size = len(sample['net_input']["src_tokens"])
+
         # x_extra['inner_states'][0] -> embedding layer
         x, x_extra = encoder.extract_features(src_tokens=sample['net_input']['src_tokens'],
                                               src_positions=sample['net_input']['src_positions'],
                                               force_positions=True,
                                               return_all_hiddens=True)
         sentence_rep_x = model.pooler(attn_mask, x_extra['inner_states'])
-
         # z_extra['inner_states'][0] -> embedding layer
         z, z_extra = encoder.extract_features(src_tokens=sample['net_input']['src_tokens'],
                                               src_positions=sample['net_input']['src_positions'],
                                               force_positions=True,
                                               return_all_hiddens=True)
         sentence_rep_z = model.pooler(attn_mask, z_extra['inner_states'])
-        cos_sim = self.mcl_similarity_metric(sentence_rep_x.unsqueeze(1), sentence_rep_z.unsqueeze(0))
-        labels = torch.arange(cos_sim.size(0)).long().to(model.encoder.sentence_encoder.embed_tokens.weight.device)
+        cos_sim, labels = self._calculate_cl(sentence_rep_x, sentence_rep_z)
         loss_fct = nn.CrossEntropyLoss()
         mcl_loss = loss_fct(cos_sim, labels)
         logging_output = {
@@ -179,6 +180,40 @@ class XlmXclLoss(FairseqCriterion):
         }
 
         return mcl_loss, sample_size, logging_output
+    def _calculate_cl(self, sentence_rep_x, sentence_rep_z):
+        """
+        Calculate the contrastive loss, given
+            sentence_rep_x --- the regular sentence representations from the encoder
+        and sentence_rep_z --- candidate representations used to make positive or negative pairs
+
+        MCL -> sentence_rep_z is obtained from calculating the same input with a different dropout mask
+        TCL -> sentence_rep_z is obtained from calculating the sentence representations of parallel sentences
+        """
+        rank = 0
+        batch_size, _ = sentence_rep_x.shape
+        if dist.is_initialized():
+            # Dummy vectors for allgather
+            x_list = [torch.zeros_like(sentence_rep_x) for _ in range(dist.get_world_size())]
+            z_list = [torch.zeros_like(sentence_rep_z) for _ in range(dist.get_world_size())]
+            # Allgather
+            dist.all_gather(tensor_list=x_list, tensor=sentence_rep_x.contiguous())
+            dist.all_gather(tensor_list=z_list, tensor=sentence_rep_z.contiguous())
+            # Since allgather results do not have gradients, we replace the
+            # current process's corresponding embeddings with original tensors
+            rank = dist.get_rank()
+            x_list[rank] = sentence_rep_x
+            z_list[rank] = sentence_rep_z
+            # Get full batch embeddings: (batch_size x num_workers, hidden)
+            # get all
+            sentence_rep_x = torch.cat(x_list, 0)
+            sentence_rep_z = torch.cat(z_list, 0)
+        # (batch_size*num_workers x batch_size*num_workers)
+        cos_sim = self.mcl_similarity_metric(sentence_rep_x.unsqueeze(1), sentence_rep_z.unsqueeze(0))
+        # TODO(Leo): find the right chunk for each worker on cos_sim and labels
+        labels = torch.arange(cos_sim.size(0)).long().to(model.encoder.sentence_encoder.embed_tokens.weight.device)
+        cos_sim = cos_sim[rank*batch_size:(rank + 1)*batch_size]
+        labels = labels[rank*batch_size:(rank + 1)*batch_size]
+        return cos_sim, labels
 
     def tcl_forward(self, model, sample, reduce=True):
         log_prefix = "tcl"
@@ -200,9 +235,7 @@ class XlmXclLoss(FairseqCriterion):
                                               force_positions=True,
                                               return_all_hiddens=True)
         sentence_rep_z = model.pooler(z_attn_mask, z_extra['inner_states'])
-        cos_sim = self.mcl_similarity_metric(sentence_rep_x.unsqueeze(1), sentence_rep_z.unsqueeze(0))
-        # gather_all()
-        labels = torch.arange(cos_sim.size(0)).long().to(model.encoder.sentence_encoder.embed_tokens.weight.device)
+        cos_sim, labels = self._calculate_cl(sentence_rep_x, sentence_rep_z)
         loss_fct = nn.CrossEntropyLoss()
         tcl_loss = loss_fct(cos_sim, labels)
         logging_output = {
@@ -233,11 +266,11 @@ class XlmXclLoss(FairseqCriterion):
             logging_output.update(mlm_logging_output)
             import transformers
             # mcl
-            if self.use_mcl:
-                mcl_loss, mcl_sample_size, mcl_logging_output = self.mcl_forward(model, sample, reduce)
-                loss += self.mcl_coeff * mcl_loss
-                sample_size += mcl_sample_size
-                logging_output.update(mcl_logging_output)
+            # if self.use_mcl:
+            #     mcl_loss, mcl_sample_size, mcl_logging_output = self.mcl_forward(model, sample, reduce)
+            #     loss += self.mcl_coeff * mcl_loss
+            #     sample_size += mcl_sample_size
+            #     logging_output.update(mcl_logging_output)
             logging_output.update({"mono": True})  # we use this as a indicator for reduce_metrics()
 
         elif len(sample['target']) == 2:
