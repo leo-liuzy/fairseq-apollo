@@ -177,15 +177,15 @@ class XlmXclLoss(FairseqCriterion):
             # get all
             sentence_rep_x = torch.cat(x_list, 0)
             sentence_rep_z = torch.cat(z_list, 0)
-            print(sentence_rep_x.shape)
+            # print(sentence_rep_x.shape)
         # (batch_size*num_workers x batch_size*num_workers)
         cos_sim = self.mcl_similarity_metric(sentence_rep_x.unsqueeze(1), sentence_rep_z.unsqueeze(0))
         labels = torch.arange(cos_sim.size(0)).long()
         # TODO(Leo): find the right chunk for each worker on cos_sim and labels
         cos_sim = cos_sim[rank*batch_size:(rank + 1)*batch_size]
         labels = labels[rank*batch_size:(rank + 1)*batch_size]
-        print(f"rank: {rank}")
-        print(f"Cur lower: {rank*batch_size}, Cur upper: {(rank + 1)*batch_size}")
+        # print(f"rank: {rank}")
+        # print(f"Cur lower: {rank*batch_size}, Cur upper: {(rank + 1)*batch_size}")
         return cos_sim, labels
 
     def mcl_forward(self, model, sample, reduce=True):
@@ -211,8 +211,8 @@ class XlmXclLoss(FairseqCriterion):
         sentence_rep_z = model.pooler(attn_mask, z_extra['inner_states'])
         cos_sim, labels = self._calculate_cl(sentence_rep_x, sentence_rep_z)
         labels = labels.to(model.encoder.sentence_encoder.embed_tokens.weight.device)
-        print(f"cos_sim shape: {cos_sim.shape}")
-        print(f"labels: {labels}")
+        # print(f"cos_sim shape: {cos_sim.shape}")
+        # print(f"labels: {labels}")
         loss_fct = nn.CrossEntropyLoss()
         mcl_loss = loss_fct(cos_sim, labels)
         logging_output = {
