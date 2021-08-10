@@ -19,4 +19,5 @@
 # ./preprocess_para.sh en-tr
 # ./preprocess_para.sh en-ur
 # ./preprocess_para.sh en-vi
-./preprocess_para.sh en-zh
+#./preprocess_para.sh en-zh
+echo $1
