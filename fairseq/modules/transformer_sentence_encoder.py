@@ -241,7 +241,6 @@ class TransformerSentenceEncoder(nn.Module):
 
         if self.embed_positions is not None:
             # (Leo): added "force_positions" for compatibility issue
-            # bp()
             x += self.embed_positions(tokens, force_positions=force_positions, positions=positions)
 
         if self.segment_embeddings is not None and segment_labels is not None:
