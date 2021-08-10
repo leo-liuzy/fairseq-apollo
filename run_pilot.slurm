@@ -41,7 +41,8 @@ DATA=${PROJ_DIR}/data-bin/XLM_pilot_run_21Langs
 lr=0.0005
 max_sentences=6
 num_update=52000
-exp_name="bszPerGPU${max_sentences}_lr${lr}_update${num_update}XLM_pilot_run_21Langs_XLM+XCL"
+base_exp="XLM_pilot_run_21Langs_XLM+XCL"
+exp_name="bszPerGPU${max_sentences}_lr${lr}_update${num_update}_${base_exp}"
 
 SAVE=${SAVE_ROOT}/${exp_name}
 mkdir -p ${SAVE}
