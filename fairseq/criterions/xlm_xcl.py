@@ -211,6 +211,8 @@ class XlmXclLoss(FairseqCriterion):
         sentence_rep_z = model.pooler(attn_mask, z_extra['inner_states'])
         cos_sim, labels = self._calculate_cl(sentence_rep_x, sentence_rep_z)
         labels = labels.to(model.encoder.sentence_encoder.embed_tokens.weight.device)
+        print(f"cos_sim shape: {cos_sim.shape}")
+        print(f"labels: {labels}")
         loss_fct = nn.CrossEntropyLoss()
         mcl_loss = loss_fct(cos_sim, labels)
         logging_output = {
