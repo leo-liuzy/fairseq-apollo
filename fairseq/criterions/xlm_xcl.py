@@ -13,6 +13,7 @@ import torch.distributed as dist
 from collections import defaultdict
 from fairseq import metrics, modules, utils
 from fairseq.criterions import FairseqCriterion, register_criterion
+from ipdb import set_trace as bp
 
 
 class Similarity(nn.Module):
@@ -191,6 +192,7 @@ class XlmXclLoss(FairseqCriterion):
         """
         rank = 0
         batch_size, _ = sentence_rep_x.shape
+        # bp()
         if dist.is_initialized():
             # Dummy vectors for allgather
             x_list = [torch.zeros_like(sentence_rep_x) for _ in range(dist.get_world_size())]
@@ -207,12 +209,15 @@ class XlmXclLoss(FairseqCriterion):
             # get all
             sentence_rep_x = torch.cat(x_list, 0)
             sentence_rep_z = torch.cat(z_list, 0)
+            print(sentence_rep_x.shape)
         # (batch_size*num_workers x batch_size*num_workers)
         cos_sim = self.mcl_similarity_metric(sentence_rep_x.unsqueeze(1), sentence_rep_z.unsqueeze(0))
         # TODO(Leo): find the right chunk for each worker on cos_sim and labels
         labels = torch.arange(cos_sim.size(0)).long().to(model.encoder.sentence_encoder.embed_tokens.weight.device)
         cos_sim = cos_sim[rank*batch_size:(rank + 1)*batch_size]
         labels = labels[rank*batch_size:(rank + 1)*batch_size]
+        print(f"rank: {rank}")
+        print(f"Cur lower: {rank*batch_size}, Cur upper: {(rank + 1)*batch_size}")
         return cos_sim, labels
 
     def tcl_forward(self, model, sample, reduce=True):
@@ -264,13 +269,12 @@ class XlmXclLoss(FairseqCriterion):
             loss += self.mlm_coeff * mlm_loss
             sample_size += mlm_sample_size
             logging_output.update(mlm_logging_output)
-            import transformers
             # mcl
-            # if self.use_mcl:
-            #     mcl_loss, mcl_sample_size, mcl_logging_output = self.mcl_forward(model, sample, reduce)
-            #     loss += self.mcl_coeff * mcl_loss
-            #     sample_size += mcl_sample_size
-            #     logging_output.update(mcl_logging_output)
+            if self.use_mcl:
+                mcl_loss, mcl_sample_size, mcl_logging_output = self.mcl_forward(model, sample, reduce)
+                loss += self.mcl_coeff * mcl_loss
+                sample_size += mcl_sample_size
+                logging_output.update(mcl_logging_output)
             logging_output.update({"mono": True})  # we use this as a indicator for reduce_metrics()
 
         elif len(sample['target']) == 2:

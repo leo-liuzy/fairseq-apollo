@@ -25,6 +25,6 @@ python fairseq_cli/train.py --data data-bin/XLM_pilot_run_21Langs_debug \
     --log-interval 2 \
     --log-format tqdm \
     --tensorboard-logdir checkpoints/XLM_pilot_run_21Langs_debug/log \
-    --cpu
+    --restore-file data/xlmr.base/model.pt
+    # --cpu
     # --dataset-impl "mmap" \
-    # --restore-file data/xlmr.base/model.pt \
