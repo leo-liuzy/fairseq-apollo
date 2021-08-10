@@ -5,6 +5,7 @@
 
 import math
 
+import numpy as np
 import torch
 import torch.nn.functional as F
 from torch import nn
@@ -300,7 +301,8 @@ class XlmXclLoss(FairseqCriterion):
             raise Exception("Invalid data format.")
         # TODO (Leo): understand how 'sample_size' is used
         logging_output['ntokens'] = sum(v for k, v in logging_output.items() if 'ntokens' in k)
-        logging_output['nsentences'] = sum(v for k, v in logging_output.items() if 'nsentences' in k)
+
+        logging_output['nsentences'] = np.mean((v for k, v in logging_output.items() if 'nsentences' in k))
         return loss, sample_size, logging_output
 
     @staticmethod
