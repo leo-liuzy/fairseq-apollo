@@ -998,3 +998,4 @@
 ▁Mu one kan o ▁wa ▁bu stani ▁ya ▁As kari ▁monument ▁kabla ▁ya ▁kuzi nd uliwa ▁rasmi .
 ▁Masa a ▁24 ▁kwa ▁ajili ▁ya ▁Bwana , m wa ka ▁huu ▁hata ▁katika ▁mag e reza ▁ya ▁wa fungwa !
 ▁Kutoka na ▁na ▁ma pung ufu ▁ya ▁ki bina da mu ▁viongozi ▁wa ▁chama ▁hicho ▁kip ya ▁na o ▁wanaweza ▁ku ing ' ang ' ania ▁katiba ▁hii ▁mb ovu ▁kutokana ▁na ▁uji nga ▁wa ▁watanzania ▁walio ▁wengi ▁na ▁tu ka endelea ▁kuum ia ▁vile ▁vile .
+Done

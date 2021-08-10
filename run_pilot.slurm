@@ -5,7 +5,7 @@
 #SBATCH --job-name=XLM_pilot_run_21Langs
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --mem=120g
+#SBATCH --mem=164g
 #SBATCH --gres=gpu:v100:2
 #SBATCH --cpus-per-task=16
 ##SBATCH --signal=B:USR1@60 #Signal is sent to batch script itself
@@ -30,9 +30,6 @@ trap_handler () {
 # Install signal handler
 trap 'trap_handler USR1' USR1
 trap 'trap_handler TERM' TERM
-
-module load cuda/10.1.243
-source activate py37
 
 #DATE=`date +%Y%m%d`
 PROJ_DIR=/home1/zliu9986/fairseq-apollo
