@@ -154,6 +154,6 @@ data-bin/XLM_pilot_run_21Langs/
 # fairseq/data/**/*
 .DS_Store
 checkpoints/**/*.pt
-checkpoints/lr*
+checkpoints/lr*/checkpoint*
 slurm*
 slurm*/
