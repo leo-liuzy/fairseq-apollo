@@ -5,8 +5,8 @@
 #SBATCH --job-name=xnli_xlmr_en
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --mem=164g
-#SBATCH --gres=gpu:v100:8
+#SBATCH --mem=64g
+#SBATCH --gres=gpu:v100:2
 #SBATCH --cpus-per-task=16
 ##SBATCH --signal=B:USR1@60 #Signal is sent to batch script itself
 ##SBATCH --open-mode=append
@@ -33,12 +33,14 @@ trap 'trap_handler TERM' TERM
 
 lr=0.0000075
 per_gpu_batch_size=8
+acc_step=2
 data_root=data
 model_dir=xlmr.base.hg
-num_epoch=30
+num_epoch=10
 max_len=256
 lang=en
-output_dir=lr${lr}_perGPUbsz${per_gpu_batch_size}_epoch${num_epoch}_maxlen${max_len}_lang${lang}_${model_dir}
+output_dir=checkpoints/lr${lr}_perGPUbsz$((per_gpu_batch_size * acc_step))_epoch${num_epoch}_maxlen${max_len}_lang${lang}_${model_dir}
+echo $output_dir
 
 mkdir -p ${output_dir}
 cp $0 ${output_dir}/run.sh
@@ -48,7 +50,7 @@ cp $0 ${output_dir}/run.sh
 python run_xnli.py \
   --model_name_or_path ${data_root}/xlmr.base.hg \
   --max_seq_length $max_len \
-  --do_tarin \
+  --do_train \
   --do_eval \
   --learning_rate $lr \
   --per_device_train_batch_size $per_gpu_batch_size \
@@ -56,6 +58,7 @@ python run_xnli.py \
   --num_train_epochs $num_epoch \
   --train_language $lang \
   --language $lang \
-  --gradient_accumulation_steps 2 \
+  --gradient_accumulation_steps 1 \
   --save_total_limit 2 \
+  --overwrite_output_dir \
   --output_dir $output_dir

@@ -137,6 +137,11 @@ dmypy.json
 data/raw_XLM_pilot_run_21Langs/**
 data/tokenized_XLM_pilot_run_21Langs/**/*
 
+data*0/
+data*1/
+data*2/
+data*3/
+data*4/
 data/xlm-roberta-base/
 data/XNLI-1.0/
 data/multinli_1.0/
@@ -149,3 +154,6 @@ data-bin/XLM_pilot_run_21Langs/
 # fairseq/data/**/*
 .DS_Store
 checkpoints/**/*.pt
+checkpoints/lr*
+slurm*
+slurm*/

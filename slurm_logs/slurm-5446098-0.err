@@ -1,0 +1,500 @@
+/home1/zliu9986/miniconda3/envs/mluna/lib/python3.8/site-packages/torch/nn/parallel/distributed.py:397: UserWarning: The `check_reduction` argument in `DistributedDataParallel` module is deprecated. Please avoid using it.
+  warnings.warn(
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfxj7kmn9, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfxj7kmn9, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfxj7kmn9, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfxj7kmn9, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfxj7kmn9, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfxj7kmn9, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfxj7kmn9, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.163785GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpzhfvfeeo, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpzhfvfeeo, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpzhfvfeeo, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpzhfvfeeo, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpzhfvfeeo, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpzhfvfeeo, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpzhfvfeeo, retrying 74 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpzhfvfeeo, retrying 73 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpzhfvfeeo, retrying 72 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpzhfvfeeo, retrying 71 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.245678GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpj7ny_ppa, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpj7ny_ppa, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpj7ny_ppa, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpj7ny_ppa, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpj7ny_ppa, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpj7ny_ppa, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpj7ny_ppa, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.163785GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpt_9oo0nc, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpt_9oo0nc, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpt_9oo0nc, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpt_9oo0nc, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpt_9oo0nc, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpt_9oo0nc, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.245678GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpjsa5_ry1, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpjsa5_ry1, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpjsa5_ry1, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpjsa5_ry1, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpjsa5_ry1, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpjsa5_ry1, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpjsa5_ry1, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.163785GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmphys_c5b0, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmphys_c5b0, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmphys_c5b0, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmphys_c5b0, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmphys_c5b0, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmphys_c5b0, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.156628GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfit4bc2q, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfit4bc2q, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfit4bc2q, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfit4bc2q, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfit4bc2q, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfit4bc2q, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.234941GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2ekljgtv, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2ekljgtv, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2ekljgtv, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2ekljgtv, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2ekljgtv, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2ekljgtv, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.156628GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8o4pigv5, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8o4pigv5, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8o4pigv5, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8o4pigv5, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8o4pigv5, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8o4pigv5, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8o4pigv5, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.234941GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpq8lxybdn, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpq8lxybdn, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpq8lxybdn, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpq8lxybdn, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpq8lxybdn, retrying 76 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.156628GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp3mbf8xx_, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp3mbf8xx_, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp3mbf8xx_, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp3mbf8xx_, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp3mbf8xx_, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp3mbf8xx_, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.190528GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpni2rcsf5, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpni2rcsf5, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpni2rcsf5, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpni2rcsf5, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpni2rcsf5, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpni2rcsf5, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.285792GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0kwrr49o, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0kwrr49o, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0kwrr49o, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0kwrr49o, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0kwrr49o, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0kwrr49o, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0kwrr49o, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.190528GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpvtdgd6qj, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpvtdgd6qj, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpvtdgd6qj, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpvtdgd6qj, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpvtdgd6qj, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpvtdgd6qj, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.285792GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpijk3l78z, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpijk3l78z, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpijk3l78z, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpijk3l78z, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpijk3l78z, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpijk3l78z, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.190528GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0nwa7u2e, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0nwa7u2e, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0nwa7u2e, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0nwa7u2e, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0nwa7u2e, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0nwa7u2e, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.221122GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfch5nrnr, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfch5nrnr, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfch5nrnr, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfch5nrnr, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfch5nrnr, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpfch5nrnr, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.331683GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmppe1x66_s, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmppe1x66_s, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmppe1x66_s, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmppe1x66_s, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmppe1x66_s, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmppe1x66_s, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmppe1x66_s, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.221122GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2ot4klst, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2ot4klst, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2ot4klst, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2ot4klst, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2ot4klst, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2ot4klst, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.331683GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6bn4sz_4, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6bn4sz_4, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6bn4sz_4, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6bn4sz_4, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6bn4sz_4, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6bn4sz_4, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.221122GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptkjgv0bv, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptkjgv0bv, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptkjgv0bv, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptkjgv0bv, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptkjgv0bv, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptkjgv0bv, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.195626GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpdz8znyof, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpdz8znyof, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpdz8znyof, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpdz8znyof, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpdz8znyof, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpdz8znyof, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpdz8znyof, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.293439GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6q40fgm_, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6q40fgm_, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6q40fgm_, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6q40fgm_, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6q40fgm_, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6q40fgm_, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6q40fgm_, retrying 74 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6q40fgm_, retrying 73 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6q40fgm_, retrying 72 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.195626GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8ok1kzgk, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8ok1kzgk, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8ok1kzgk, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8ok1kzgk, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8ok1kzgk, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8ok1kzgk, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.293439GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp7ehasc9g, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp7ehasc9g, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp7ehasc9g, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp7ehasc9g, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp7ehasc9g, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp7ehasc9g, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.195626GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp_uzd0m77, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp_uzd0m77, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp_uzd0m77, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp_uzd0m77, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp_uzd0m77, retrying 76 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.160513GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp_m3d9deg, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp_m3d9deg, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp_m3d9deg, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp_m3d9deg, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp_m3d9deg, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp_m3d9deg, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.240769GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0y67_4n2, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0y67_4n2, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0y67_4n2, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0y67_4n2, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0y67_4n2, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0y67_4n2, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.160513GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp358szo1s, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp358szo1s, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp358szo1s, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp358szo1s, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp358szo1s, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp358szo1s, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.240769GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4cyp_vk7, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4cyp_vk7, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4cyp_vk7, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4cyp_vk7, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4cyp_vk7, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4cyp_vk7, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.160513GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/home1/zliu9986/miniconda3/envs/mluna/lib/python3.8/site-packages/torch/nn/parallel/distributed.py:397: UserWarning: The `check_reduction` argument in `DistributedDataParallel` module is deprecated. Please avoid using it.
+  warnings.warn(
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpg00z6izx, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpg00z6izx, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpg00z6izx, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpg00z6izx, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpg00z6izx, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpg00z6izx, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpg00z6izx, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.163785GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp5n2xard6, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp5n2xard6, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp5n2xard6, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp5n2xard6, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp5n2xard6, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp5n2xard6, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.245678GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp66w7cgxn, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp66w7cgxn, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp66w7cgxn, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp66w7cgxn, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp66w7cgxn, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp66w7cgxn, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.163785GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8zl4j87e, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8zl4j87e, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8zl4j87e, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8zl4j87e, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8zl4j87e, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8zl4j87e, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.245678GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0_dairdw, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0_dairdw, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0_dairdw, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0_dairdw, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp0_dairdw, retrying 76 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.163785GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp78cf4o1q, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp78cf4o1q, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp78cf4o1q, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp78cf4o1q, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp78cf4o1q, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp78cf4o1q, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.156628GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp77m84518, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp77m84518, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp77m84518, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp77m84518, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp77m84518, retrying 76 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.234941GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpd0437q1n, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpd0437q1n, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpd0437q1n, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpd0437q1n, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpd0437q1n, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpd0437q1n, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.156628GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6ig7cw5f, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6ig7cw5f, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6ig7cw5f, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6ig7cw5f, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6ig7cw5f, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6ig7cw5f, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp6ig7cw5f, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.234941GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2b5cb97r, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2b5cb97r, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2b5cb97r, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2b5cb97r, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2b5cb97r, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp2b5cb97r, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.156628GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpq60dh0hg, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpq60dh0hg, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpq60dh0hg, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpq60dh0hg, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpq60dh0hg, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpq60dh0hg, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.190528GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpcgg12aeg, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpcgg12aeg, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpcgg12aeg, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpcgg12aeg, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpcgg12aeg, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpcgg12aeg, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.285792GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpj1hff_hs, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpj1hff_hs, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpj1hff_hs, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpj1hff_hs, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpj1hff_hs, retrying 76 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.190528GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpwf79kfd0, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpwf79kfd0, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpwf79kfd0, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpwf79kfd0, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpwf79kfd0, retrying 76 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.285792GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4f7u1fdj, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4f7u1fdj, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4f7u1fdj, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4f7u1fdj, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4f7u1fdj, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4f7u1fdj, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.190528GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpm16_cg2e, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpm16_cg2e, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpm16_cg2e, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpm16_cg2e, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpm16_cg2e, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpm16_cg2e, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.221122GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpepyjzdl9, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpepyjzdl9, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpepyjzdl9, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpepyjzdl9, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpepyjzdl9, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpepyjzdl9, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.331683GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpvl8j7629, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpvl8j7629, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpvl8j7629, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpvl8j7629, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpvl8j7629, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpvl8j7629, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.221122GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp437_2i45, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp437_2i45, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp437_2i45, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp437_2i45, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp437_2i45, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp437_2i45, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp437_2i45, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.331683GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8z90pfic, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8z90pfic, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8z90pfic, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8z90pfic, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8z90pfic, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8z90pfic, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp8z90pfic, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.221122GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpsds7_jao, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpsds7_jao, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpsds7_jao, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpsds7_jao, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpsds7_jao, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpsds7_jao, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.195626GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpbhwfdl1u, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpbhwfdl1u, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpbhwfdl1u, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpbhwfdl1u, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpbhwfdl1u, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpbhwfdl1u, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.293439GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptq5hzsn3, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptq5hzsn3, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptq5hzsn3, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptq5hzsn3, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptq5hzsn3, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptq5hzsn3, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.195626GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpkn_q2bg7, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpkn_q2bg7, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpkn_q2bg7, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpkn_q2bg7, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpkn_q2bg7, retrying 76 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.293439GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpu_or3oue, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpu_or3oue, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpu_or3oue, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpu_or3oue, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpu_or3oue, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpu_or3oue, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpu_or3oue, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.195626GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpu_or3oue, retrying 73 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpmp0b_4wd, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpmp0b_4wd, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpmp0b_4wd, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpmp0b_4wd, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpmp0b_4wd, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpmp0b_4wd, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.160513GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpi_hwuklc, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpi_hwuklc, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpi_hwuklc, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpi_hwuklc, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpi_hwuklc, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpi_hwuklc, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.240769GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptcceovc_, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptcceovc_, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptcceovc_, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptcceovc_, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptcceovc_, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptcceovc_, retrying 75 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmptcceovc_, retrying 74 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.160513GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpp_l4t16j, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpp_l4t16j, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpp_l4t16j, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpp_l4t16j, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmpp_l4t16j, retrying 76 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.240769GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4n2ro_0b, retrying 80 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4n2ro_0b, retrying 79 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4n2ro_0b, retrying 78 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4n2ro_0b, retrying 77 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4n2ro_0b, retrying 76 more times
+/arrow/cpp/src/plasma/io.cc:177: Connection to IPC socket failed for pathname /tmp/SLURM_5446098/tmp4n2ro_0b, retrying 75 more times
+/arrow/cpp/src/plasma/store.cc:1274: Allowing the Plasma store to use up to 0.160513GB of memory.
+/arrow/cpp/src/plasma/store.cc:1297: Starting object store with directory /dev/shm and huge page support disabled
+/scratch/zliu9986/fairseq-apollo/fairseq/utils.py:313: UserWarning: amp_C fused kernels unavailable, disabling multi_tensor_l2norm; you may get better performance by installing NVIDIA's apex library
+  warnings.warn(
+slurmstepd: error: *** JOB 5446098 ON d13-02 CANCELLED AT 2021-08-10T21:28:37 ***
