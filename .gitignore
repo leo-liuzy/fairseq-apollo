@@ -138,6 +138,9 @@ data/raw_XLM_pilot_run_21Langs/**
 data/tokenized_XLM_pilot_run_21Langs/**/*
 
 data/xlm-roberta-base/
+data/XNLI-1.0/
+data/multinli_1.0/
+data/xlmr.base.hg/
 data/para/**
 # data-bin/**/*
 data-bin/XLM_pilot_run_21Langs/

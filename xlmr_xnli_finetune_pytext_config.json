@@ -1,0 +1,127 @@
+{
+  "version": 18,
+  "task": {
+    "DocumentClassificationTask": {
+      "data": {
+        "Data": {
+          "source": {
+            "TSVDataSource": {
+              "train_filename": "{TRAIN_FILENAME}",
+              "test_filename": "{TEST_FILENAME}",
+              "eval_filename": "{EVAL_FILENAME}",
+              "field_names": [
+                "label",
+                "text1",
+                "text2"
+              ]
+            }
+          },
+          "batcher": {
+            "Batcher": {
+              "train_batch_size": 8,
+              "eval_batch_size": 8,
+              "test_batch_size": 8
+            }
+          },
+          "sort_key": "tokens"
+        }
+      },
+      "trainer": {
+        "TaskTrainer": {
+          "epochs": 1,
+          "early_stop_after": 0,
+          "max_clip_norm": null,
+          "report_train_metrics": true,
+          "target_time_limit_seconds": null,
+          "do_eval": true,
+          "num_samples_to_log_progress": 10,
+          "num_accumulated_batches": 1,
+          "optimizer": {
+            "Adam": {
+              "lr": 0.000005,
+              "weight_decay": 0
+            }
+          },
+          "scheduler": null,
+          "sparsifier": null,
+          "fp16_args": {
+            "FP16OptimizerApex": {
+              "init_loss_scale": null,
+              "min_loss_scale": null
+            }
+          }
+        }
+      },
+      "model": {
+        "RoBERTa": {
+          "inputs": {
+            "tokens": {
+              "columns": [
+                "text1",
+                "text2"
+              ],
+              "vocab_file": "{VOCAB_PATH}",
+              "tokenizer": {
+                "SentencePieceTokenizer": {
+                  "sp_model_path": "{SP_MODEL_PATH}"
+                }
+              },
+              "max_seq_len": 256
+            },
+            "labels": {
+              "LabelTensorizer": {
+                "column": "label",
+                "allow_unknown": false,
+                "pad_in_vocab": false,
+                "label_vocab": null
+              }
+            }
+          },
+          "encoder": {
+            "RoBERTaEncoder": {
+              "load_path": null,
+              "save_path": "encoder.pt",
+              "shared_module_key": null,
+              "embedding_dim": 1024,
+              "vocab_size": 250002,
+              "num_encoder_layers": 24,
+              "num_attention_heads": 16,
+              "model_path": "{PRE_TRAIN_MODEL_PATH}",
+              "is_finetuned": false
+            }
+          },
+          "decoder": {
+            "load_path": null,
+            "save_path": "decoder.pt",
+            "freeze": false,
+            "shared_module_key": "DECODER",
+            "hidden_dims": [],
+            "out_dim": null,
+            "activation": "gelu"
+          },
+          "output_layer": {
+            "load_path": null,
+            "save_path": null,
+            "freeze": false,
+            "shared_module_key": null,
+            "loss": {
+              "CrossEntropyLoss": {}
+            },
+            "label_weights": null
+          }
+        }
+      },
+      "metric_reporter": {
+        "ClassificationMetricReporter": {
+          "model_select_metric": "accuracy",
+          "target_label": null,
+          "text_column_names": [
+            "text1",
+            "text2"
+          ],
+          "recall_at_precision_thresholds": []
+        }
+      }
+    }
+  }
+}
