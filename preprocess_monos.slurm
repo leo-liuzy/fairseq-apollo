@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=64GB
-#SBATCH --time=5:00:00
+#SBATCH --time=10:00:00
 
 num_shards=5
 ./preprocess_mono.sh en $num_shards

@@ -36,7 +36,7 @@ per_gpu_batch_size=8
 acc_step=2
 data_root=data
 model_dir=xlmr.base.hg
-num_epoch=10
+num_epoch=5
 max_len=256
 lang=en
 output_dir=checkpoints/lr${lr}_perGPUbsz$((per_gpu_batch_size * acc_step))_epoch${num_epoch}_maxlen${max_len}_lang${lang}_${model_dir}
@@ -60,5 +60,6 @@ python run_xnli.py \
   --language $lang \
   --gradient_accumulation_steps 1 \
   --save_total_limit 2 \
+  --save_strategy epoch \
   --overwrite_output_dir \
   --output_dir $output_dir
