@@ -83,6 +83,10 @@ class XlmrXcl(FairseqTask):
         parser.add_argument('--use-para-data', action="store_true",
                             help='colon separated path to parallel data directories list,'
                                  ' will be iterated upon during epochs in round-robin manner')
+        parser.add_argument('--use-mlm', action="store_true",
+                            help='Use Masked Language Model')
+        parser.add_argument('--use-tlm', action="store_true",
+                            help='Use Translational Language Model')
         parser.add_argument('--use-mcl', action="store_true",
                             help='Use Monolingual Contrastive Learning')
         parser.add_argument('--use-tcl', action="store_true",

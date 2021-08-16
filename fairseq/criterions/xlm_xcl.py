@@ -54,8 +54,11 @@ class XlmXclLoss(FairseqCriterion):
         self.mcl_coeff = self.task.args.mcl_coeff
         self.tcl_coeff = self.task.args.tcl_coeff
 
+        self.use_mlm = self.task.args.use_mlm
+        self.use_tlm = self.task.args.use_tlm
         self.use_mcl = self.task.args.use_mcl
         self.use_tcl = self.task.args.use_tcl
+        assert any([self.use_mlm, self.use_tlm, self.use_mcl, self.use_tcl])
 
     def _mask_helper(self, mask):
         # Rare: when all tokens are masked, project all tokens.
@@ -271,10 +274,11 @@ class XlmXclLoss(FairseqCriterion):
         logging_output = defaultdict(int)
         if len(sample['target']) == 1:
             # monolingual
-            mlm_loss, mlm_sample_size, mlm_logging_output = self.mlm_forward(model, sample, reduce)
-            loss += self.mlm_coeff * mlm_loss
-            sample_size += mlm_sample_size
-            logging_output.update(mlm_logging_output)
+            if self.use_mlm:
+                mlm_loss, mlm_sample_size, mlm_logging_output = self.mlm_forward(model, sample, reduce)
+                loss += self.mlm_coeff * mlm_loss
+                sample_size += mlm_sample_size
+                logging_output.update(mlm_logging_output)
             # mcl
             if self.use_mcl:
                 mcl_loss, mcl_sample_size, mcl_logging_output = self.mcl_forward(model, sample, reduce)
@@ -285,10 +289,11 @@ class XlmXclLoss(FairseqCriterion):
 
         elif len(sample['target']) == 2:
             # tlm
-            tlm_loss, tlm_sample_size, tlm_logging_output = self.tlm_forward(model, sample, reduce)
-            loss += self.tlm_coeff * tlm_loss
-            sample_size += tlm_sample_size
-            logging_output.update(tlm_logging_output)
+            if self.use_tlm:
+                tlm_loss, tlm_sample_size, tlm_logging_output = self.tlm_forward(model, sample, reduce)
+                loss += self.tlm_coeff * tlm_loss
+                sample_size += tlm_sample_size
+                logging_output.update(tlm_logging_output)
 
             # tcl
             if self.use_tcl:
