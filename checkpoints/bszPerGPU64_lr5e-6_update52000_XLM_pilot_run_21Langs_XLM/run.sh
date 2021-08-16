@@ -39,7 +39,7 @@ lr=5e-6
 max_sentences=4
 world_size=16
 num_update=52000
-base_exp="XLM_pilot_run_21Langs_XCL"
+base_exp="XLM_pilot_run_21Langs_XLM"
 exp_name="bszPerGPU$((max_sentences * world_size))_lr${lr}_update${num_update}_${base_exp}"
 
 SAVE=${SAVE_ROOT}/${exp_name}
@@ -71,7 +71,7 @@ srun --label python fairseq_cli/train.py --data ${DATA} \
     --restore-file data/xlmr.base/model.pt \
     --distributed-port 3154 \
     --distributed-world-size $world_size \
-    --use-mcl \
-    --use-tcl 
-    # --use-mlm \
-    # --use-tlm 
+    --use-mlm \
+    --use-tlm 
+    # --use-mcl \
+    # --use-tcl 
