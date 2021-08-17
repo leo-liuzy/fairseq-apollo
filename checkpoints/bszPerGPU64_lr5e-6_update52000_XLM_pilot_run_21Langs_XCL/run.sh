@@ -3,7 +3,7 @@
 #SBATCH --error=slurm_logs/slurm-%A-%a.err
 #SBATCH --partition=gpu
 #SBATCH --job-name=XLM_pilot_run_21Langs
-#SBATCH --nodes=1
+#SBATCH --nodes=8
 #SBATCH --ntasks-per-node=2
 #SBATCH --mem=164g
 #SBATCH --gres=gpu:v100:2
@@ -35,13 +35,12 @@ trap 'trap_handler TERM' TERM
 PROJ_DIR=/home1/zliu9986/fairseq-apollo
 SAVE_ROOT=${PROJ_DIR}/checkpoints
 DATA=${PROJ_DIR}/data-bin/XLM_pilot_run_21Langs
-lr=2.5e-6
+lr=5e-6
 max_sentences=4
-update_freq=8
-world_size=2
-num_update=5200
-base_exp="XLM_pilot_run_21Langs_MLM"
-exp_name="bszPerGPU$((max_sentences * world_size * update_freq))_lr${lr}_update${num_update}_${base_exp}"
+world_size=16
+num_update=52000
+base_exp="XLM_pilot_run_21Langs_XCL"
+exp_name="bszPerGPU$((max_sentences * world_size))_lr${lr}_update${num_update}_${base_exp}"
 
 SAVE=${SAVE_ROOT}/${exp_name}
 mkdir -p ${SAVE}
@@ -50,6 +49,8 @@ cp $0 ${SAVE}/run.sh
 srun --label python fairseq_cli/train.py --data ${DATA} \
     --langs en:ar:bg:bn:de:el:es:fi:fr:hi:id:ja:ko:ru:sw:te:th:tr:ur:vi:zh-Hans \
     --lang-pairs ar-en:bg-en:de-en:el-en:en-es:en-fr:en-hi:en-ru:en-sw:en-th:en-tr:en-ur:en-vi:en-zh \
+    --use-mono-data \
+    --use-para-data \
     --task xlm_xcl \
     --arch xlmr_xcl_base \
     --max-sentences ${max_sentences} \
@@ -63,18 +64,14 @@ srun --label python fairseq_cli/train.py --data ${DATA} \
     --weight-decay 0.0001 \
     --seed 42 \
     --max-update ${num_update} \
-    --update-freq ${update_freq} \
     --save-dir ${SAVE} \
     --log-interval 20 \
     --log-format json \
-    --tensorboard-logdir logs/${SAVE} \
+    --tensorboard-logdir ${SAVE}/log \
     --restore-file data/xlmr.base/model.pt \
     --distributed-port 3154 \
     --distributed-world-size $world_size \
-    --use-mono-data \
-    --use-mlm
-    # --use-mcl \
-    # --use-tcl \
-    # --use-para-data \
+    --use-mcl \
+    --use-tcl 
     # --use-mlm \
     # --use-tlm 
