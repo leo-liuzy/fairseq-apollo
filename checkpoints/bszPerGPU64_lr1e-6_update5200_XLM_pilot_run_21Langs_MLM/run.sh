@@ -35,7 +35,7 @@ trap 'trap_handler TERM' TERM
 PROJ_DIR=/home1/zliu9986/fairseq-apollo
 SAVE_ROOT=${PROJ_DIR}/checkpoints
 DATA=${PROJ_DIR}/data-bin/XLM_pilot_run_21Langs
-lr=5e-7
+lr=1e-6
 max_sentences=4
 update_freq=8
 world_size=2
