@@ -36,8 +36,8 @@ PROJ_DIR=/home1/zliu9986/fairseq-apollo
 SAVE_ROOT=${PROJ_DIR}/checkpoints
 DATA=${PROJ_DIR}/data-bin/XLM_pilot_run_21Langs
 lr=1e-5
-max_sentences=4
-update_freq=8
+max_sentences=8
+update_freq=4
 world_size=2
 num_update=5200
 base_exp="XLM_pilot_run_21Langs_TLM"
@@ -72,10 +72,10 @@ srun --label python fairseq_cli/train.py --data ${DATA} \
     --distributed-port 3154 \
     --distributed-world-size $world_size \
     --ddp-backend=no_c10d \
-    --use-para-data \
-    --use-tcl \
+    --use-mono-data \
+    --use-mcl
+    # --use-para-data \
+    # --use-tcl \
     # --use-tlm 
-    # --use-mono-data \
-    # --use-mcl
     # --use-mlm \
     # --use-mlm \

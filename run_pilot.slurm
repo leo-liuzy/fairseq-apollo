@@ -35,9 +35,9 @@ trap 'trap_handler TERM' TERM
 PROJ_DIR=/home1/zliu9986/fairseq-apollo
 SAVE_ROOT=${PROJ_DIR}/checkpoints
 DATA=${PROJ_DIR}/data-bin/XLM_pilot_run_21Langs
-lr=1e-6
-max_sentences=4
-update_freq=8
+lr=1e-5
+max_sentences=16
+update_freq=4
 world_size=2
 num_update=5200
 base_exp="XLM_pilot_run_21Langs_TLM"
@@ -59,7 +59,7 @@ srun --label python fairseq_cli/train.py --data ${DATA} \
     --adam-betas "(0.9,0.98)" \
     --clip-norm 1.0 \
     --lr-scheduler polynomial_decay \
-    --warmup-updates 4000 \
+    --warmup-updates 400 \
     --weight-decay 0.0001 \
     --seed 42 \
     --max-update ${num_update} \
@@ -72,10 +72,10 @@ srun --label python fairseq_cli/train.py --data ${DATA} \
     --distributed-port 3154 \
     --distributed-world-size $world_size \
     --ddp-backend=no_c10d \
-    --use-para-data \
-    --use-tcl \
+    --use-mono-data \
+    --use-mcl
+    # --use-para-data \
+    # --use-tcl \
     # --use-tlm 
-    # --use-mono-data \
-    # --use-mcl
     # --use-mlm \
     # --use-mlm \
