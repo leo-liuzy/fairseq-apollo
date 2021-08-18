@@ -313,39 +313,43 @@ class XlmXclLoss(FairseqCriterion):
     def reduce_metrics(logging_outputs) -> None:
         """Aggregate logging outputs from data parallel training."""
         assert len(logging_outputs) > 0
+        loss = 0
+        sample_size = 0
         if logging_outputs[0]["mono"]:
             # in monolingual mode
-            mlm_loss_sum = sum(log.get('mlm_loss', 0) for log in logging_outputs)
-            mlm_sample_size = sum(log.get('mlm_sample_size', 0) for log in logging_outputs)
-            metrics.log_scalar('mlm_loss', mlm_loss_sum / mlm_sample_size / math.log(2), mlm_sample_size, round=3)
-            metrics.log_derived('mlm_ppl', lambda meters: utils.get_perplexity(meters['mlm_loss'].avg))
-            loss = mlm_loss_sum / mlm_sample_size / math.log(2)
-            sample_size = mlm_sample_size
+            if "mlm_loss" in logging_outputs[0]:
+                mlm_loss_sum = sum(log.get('mlm_loss', 0) for log in logging_outputs)
+                mlm_sample_size = sum(log.get('mlm_sample_size', 0) for log in logging_outputs)
+                metrics.log_scalar('mlm_loss', mlm_loss_sum / mlm_sample_size / math.log(2), mlm_sample_size, round=3)
+                metrics.log_derived('mlm_ppl', lambda meters: utils.get_perplexity(meters['mlm_loss'].avg))
+                loss += mlm_loss_sum / mlm_sample_size / math.log(2)
+                sample_size += mlm_sample_size
 
             if "mcl_loss" in logging_outputs[0]:
                 mcl_loss_sum = sum(log.get('mcl_loss', 0) for log in logging_outputs)
                 mcl_sample_size = sum(log.get('mcl_sample_size', 0) for log in logging_outputs)
                 metrics.log_scalar('mcl_loss', mcl_loss_sum / mcl_sample_size / math.log(2), mcl_sample_size, round=3)
                 loss += mcl_loss_sum / mcl_sample_size / math.log(2)
-                loss /= 2
+                loss /= 2 if "mcl_loss" in logging_outputs[0] and "mlm_loss" in logging_outputs[0] else 1
                 sample_size += mcl_sample_size
             metrics.log_scalar('loss', loss, sample_size, round=3)
 
         else:
-            # in monolingual mode
-            tlm_loss_sum = sum(log.get('tlm_loss', 0) for log in logging_outputs)
-            tlm_sample_size = sum(log.get('tlm_sample_size', 0) for log in logging_outputs)
-            metrics.log_scalar('tlm_loss', tlm_loss_sum / tlm_sample_size / math.log(2), tlm_sample_size, round=3)
-            metrics.log_derived('tlm_ppl', lambda meters: utils.get_perplexity(meters['tlm_loss'].avg))
-            loss = tlm_loss_sum / tlm_sample_size / math.log(2)
-            sample_size = tlm_sample_size
+            # in bilingual mode
+            if "tlm_loss" in logging_outputs[0]:
+                tlm_loss_sum = sum(log.get('tlm_loss', 0) for log in logging_outputs)
+                tlm_sample_size = sum(log.get('tlm_sample_size', 0) for log in logging_outputs)
+                metrics.log_scalar('tlm_loss', tlm_loss_sum / tlm_sample_size / math.log(2), tlm_sample_size, round=3)
+                metrics.log_derived('tlm_ppl', lambda meters: utils.get_perplexity(meters['tlm_loss'].avg))
+                loss += tlm_loss_sum / tlm_sample_size / math.log(2)
+                sample_size += tlm_sample_size
 
             if "tcl_loss" in logging_outputs[0]:
                 tcl_loss_sum = sum(log.get('tcl_loss', 0) for log in logging_outputs)
                 tcl_sample_size = sum(log.get('tcl_sample_size', 0) for log in logging_outputs)
                 metrics.log_scalar('tcl_loss', tcl_loss_sum / tcl_sample_size / math.log(2), tcl_sample_size, round=3)
                 loss += tcl_loss_sum / tcl_sample_size / math.log(2)
-                loss /= 2
+                loss /= 2 if "tcl_loss" in logging_outputs[0] and "tlm_loss" in logging_outputs[0] else 1
                 sample_size += tcl_sample_size
             metrics.log_scalar('loss', loss, sample_size, round=3)
 

@@ -221,8 +221,8 @@ class XlmrXcl(FairseqTask):
         Args:
             split (str): name of the split (e.g., train, valid, test)
         """
-
-        self._load_mono_dataset(split, epoch, combine, **kwargs)
+        if self.mono_data:
+            self._load_mono_dataset(split, epoch, combine, **kwargs)
         if self.para_data:
             self._load_para_dataset(split, epoch, combine, **kwargs)
 
@@ -425,8 +425,6 @@ class XlmrXcl(FairseqTask):
         with data_utils.numpy_seed(self.args.seed + epoch):
             shuffle = np.random.permutation(len(dataset))
 
-        # we assume mono datasets is a must
-        assert split in self.datasets
         para_final_dataset = SortDataset(
             dataset,
             sort_order=[
@@ -435,10 +433,13 @@ class XlmrXcl(FairseqTask):
             ],
         )
         # Note that first is mono and para, since OrderedDict is used, such order is remembered
-        self.datasets[split] = MultiCorpusSampledDataset(OrderedDict({
-            "mono_" + split: self.datasets[split],
-            "para_" + split: para_final_dataset
-        }), sampling_func=self.args.lang_batch_sampler)
+        if split in self.datasets:
+            self.datasets[split] = MultiCorpusSampledDataset(OrderedDict({
+                "mono_" + split: self.datasets[split],
+                "para_" + split: para_final_dataset
+            }), sampling_func=self.args.lang_batch_sampler)
+        else:
+            self.datasets[split] = para_final_dataset
 
     def _maybe_resample_datasets(self, split, lang_datasets, lang_datasets_meta, sampling_alpha=1.0,
                                  epoch=1, combine=False, **kwargs):

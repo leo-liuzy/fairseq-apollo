@@ -72,8 +72,8 @@ srun --label python fairseq_cli/train.py --data ${DATA} \
     --distributed-port 3154 \
     --distributed-world-size $world_size \
     --use-mono-data \
-    --use-mlm
-    # --use-mcl \
+    # --use-mlm \
+    --use-mcl
     # --use-tcl \
     # --use-para-data \
     # --use-mlm \
