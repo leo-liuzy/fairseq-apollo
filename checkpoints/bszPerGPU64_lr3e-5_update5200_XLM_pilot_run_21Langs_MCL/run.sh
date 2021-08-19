@@ -1,7 +1,7 @@
 #! /bin/bash
 #SBATCH --output=slurm_logs/slurm-%A-%a.out
 #SBATCH --error=slurm_logs/slurm-%A-%a.err
-#SBATCH --partition=isi
+#SBATCH --partition=gpu
 #SBATCH --job-name=XLM_pilot_run_21Langs
 #SBATCH --nodes=4
 #SBATCH --ntasks-per-node=2

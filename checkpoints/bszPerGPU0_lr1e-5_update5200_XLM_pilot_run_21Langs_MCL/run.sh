@@ -1,7 +1,7 @@
 #! /bin/bash
 #SBATCH --output=slurm_logs/slurm-%A-%a.out
 #SBATCH --error=slurm_logs/slurm-%A-%a.err
-#SBATCH --partition=isi
+#SBATCH --partition=gpu
 #SBATCH --job-name=XLM_pilot_run_21Langs
 #SBATCH --nodes=4
 #SBATCH --ntasks-per-node=2
@@ -31,24 +31,14 @@ trap_handler () {
 trap 'trap_handler USR1' USR1
 trap 'trap_handler TERM' TERM
 
-# NCCL
-# export NCCL_SOCKET_IFNAME=ens3
-# export NCCL_DEBUG=INFO
-# export NCCL_IB_CUDA_SUPPORT=0
-# export NCCL_P2P_DISABLE=0
-# export NCCL_IB_DISABLE=1
-# export NCCL_NET_GDR_LEVEL=3
-# export NCCL_NET_GDR_READ=0
-# export NCCL_SHM_DISABLE=0
-
 #DATE=`date +%Y%m%d`
 PROJ_DIR=/home1/zliu9986/fairseq-apollo
 SAVE_ROOT=${PROJ_DIR}/checkpoints
 DATA=${PROJ_DIR}/data-bin/XLM_pilot_run_21Langs
-lr=3e-5
+lr=1e-5
 max_sentences=8
 update_freq=1
-world_size=8
+world_size=
 num_update=5200
 base_exp="XLM_pilot_run_21Langs_MCL"
 exp_name="bszPerGPU$((max_sentences * world_size * update_freq))_lr${lr}_update${num_update}_${base_exp}"

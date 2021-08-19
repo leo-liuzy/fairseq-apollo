@@ -3,7 +3,7 @@
 #SBATCH --error=slurm_logs/slurm-%A-%a.err
 #SBATCH --partition=gpu
 #SBATCH --job-name=XLM_pilot_run_21Langs
-#SBATCH --nodes=1
+#SBATCH --nodes=4
 #SBATCH --ntasks-per-node=2
 #SBATCH --mem=164g
 #SBATCH --gres=gpu:v100:2
@@ -31,14 +31,24 @@ trap_handler () {
 trap 'trap_handler USR1' USR1
 trap 'trap_handler TERM' TERM
 
+# NCCL
+# export NCCL_SOCKET_IFNAME=ens3
+# export NCCL_DEBUG=INFO
+# export NCCL_IB_CUDA_SUPPORT=0
+# export NCCL_P2P_DISABLE=0
+# export NCCL_IB_DISABLE=1
+# export NCCL_NET_GDR_LEVEL=3
+# export NCCL_NET_GDR_READ=0
+# export NCCL_SHM_DISABLE=0
+
 #DATE=`date +%Y%m%d`
 PROJ_DIR=/home1/zliu9986/fairseq-apollo
 SAVE_ROOT=${PROJ_DIR}/checkpoints
 DATA=${PROJ_DIR}/data-bin/XLM_pilot_run_21Langs
 lr=1e-5
-max_sentences=4
-update_freq=8
-world_size=2
+max_sentences=8
+update_freq=1
+world_size=8
 num_update=5200
 base_exp="XLM_pilot_run_21Langs_MCL"
 exp_name="bszPerGPU$((max_sentences * world_size * update_freq))_lr${lr}_update${num_update}_${base_exp}"
@@ -59,7 +69,7 @@ srun --label python fairseq_cli/train.py --data ${DATA} \
     --adam-betas "(0.9,0.98)" \
     --clip-norm 1.0 \
     --lr-scheduler polynomial_decay \
-    --warmup-updates 4000 \
+    --warmup-updates 400 \
     --weight-decay 0.0001 \
     --seed 42 \
     --max-update ${num_update} \
@@ -74,8 +84,8 @@ srun --label python fairseq_cli/train.py --data ${DATA} \
     --ddp-backend=no_c10d \
     --use-mono-data \
     --use-mcl
-    # --use-mlm \
-    # --use-tcl \
     # --use-para-data \
-    # --use-mlm \
+    # --use-tcl \
     # --use-tlm 
+    # --use-mlm \
+    # --use-mlm \
