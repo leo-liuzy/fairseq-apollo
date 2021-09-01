@@ -50,9 +50,9 @@ max_sentences=8
 update_freq=1
 world_size=8
 num_update=5200
-dropout=0.3
+dropout=0.2
 base_exp="XLM_pilot_run_21Langs_MCL"
-exp_name="bszPerGPU$((max_sentences * world_size))updateFreq${update_freq}_lr${lr}_update${num_update}_dropout${dropout}_${base_exp}"
+exp_name="bszPerGPU$((max_sentences * world_size * update_freq))_lr${lr}_update${num_update}_dropout${dropout}_${base_exp}"
 echo $exp_name
 SAVE=${SAVE_ROOT}/${exp_name}
 mkdir -p ${SAVE}
