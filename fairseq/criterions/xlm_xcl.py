@@ -208,10 +208,9 @@ class XlmXclLoss(FairseqCriterion):
             logging_output[f'{log_prefix}_sim_positive_mean'] = torch.mean(similarities_with_positive)
             logging_output[f'{log_prefix}_sim_negative_mean'] = torch.mean(similarities_with_negative, dim=-1)
             logging_output[f'{log_prefix}_sim_negative_std'] = torch.std(similarities_with_negative, dim=-1)
-
         return logging_output
+    
     def mcl_forward(self, model, sample, reduce=True):
-
         assert hasattr(model, "encoder")
         assert hasattr(model.encoder, "extract_features"), "Require model to have feature extractor"
         assert hasattr(model, "pooler"), "Require model to have pooler for sentence representation"
@@ -232,7 +231,7 @@ class XlmXclLoss(FairseqCriterion):
                                               return_all_hiddens=True)
         sentence_rep_z = model.pooler(attn_mask, z_extra['inner_states'])
         cos_sim, labels = self._calculate_cl(sentence_rep_x, sentence_rep_z, self.mcl_similarity_metric)
-        debug_data = torch.zeros(sample_size, sample_size)
+        # debug_data = torch.zeros(sample_size, sample_size)
         # for i in range(sample_size):
         #     for j in range(sample_size):
         #         debug_data[i, j] = self.mcl_similarity_metric(sentence_rep_x[i], sentence_rep_z[j])
@@ -247,7 +246,7 @@ class XlmXclLoss(FairseqCriterion):
                                            sample_size=sample_size,
                                            cos_sim=cos_sim)
 
-        return mcl_loss, sample_size, logging_output, logging_output
+        return mcl_loss, sample_size, logging_output
 
     def tcl_forward(self, model, sample, reduce=True):
         assert hasattr(model, "encoder")
@@ -339,16 +338,18 @@ class XlmXclLoss(FairseqCriterion):
             if "mlm_loss" in logging_outputs[0]:
                 mlm_loss_sum = sum(log.get('mlm_loss', 0) for log in logging_outputs)
                 mlm_sample_size = sum(log.get('mlm_sample_size', 0) for log in logging_outputs)
-                metrics.log_scalar('mlm_loss', mlm_loss_sum / mlm_sample_size / math.log(2), mlm_sample_size, round=3)
+                mean_mlm_loss = mlm_loss_sum / mlm_sample_size
+                metrics.log_scalar('mlm_loss', mean_mlm_loss / math.log(2), mlm_sample_size, round=3)
                 metrics.log_derived('mlm_ppl', lambda meters: utils.get_perplexity(meters['mlm_loss'].avg))
-                loss += mlm_loss_sum / mlm_sample_size / math.log(2)
+                loss += mean_mlm_loss / math.log(2)
                 sample_size += mlm_sample_size
 
             if "mcl_loss" in logging_outputs[0]:
                 mcl_loss_sum = sum(log.get('mcl_loss', 0) for log in logging_outputs)
                 mcl_sample_size = sum(log.get('mcl_sample_size', 0) for log in logging_outputs)
-                metrics.log_scalar('mcl_loss', mcl_loss_sum / mcl_sample_size / math.log(2), mcl_sample_size, round=3)
-                loss += mcl_loss_sum / mcl_sample_size / math.log(2)
+                mean_mcl_loss = mcl_loss_sum / mcl_sample_size
+                metrics.log_scalar('mcl_loss', mean_mcl_loss, mcl_sample_size, round=3)
+                loss += mean_mcl_loss
                 loss /= 2 if "mcl_loss" in logging_outputs[0] and "mlm_loss" in logging_outputs[0] else 1
                 sample_size += mcl_sample_size
             metrics.log_scalar('loss', loss, sample_size, round=3)
@@ -358,16 +359,18 @@ class XlmXclLoss(FairseqCriterion):
             if "tlm_loss" in logging_outputs[0]:
                 tlm_loss_sum = sum(log.get('tlm_loss', 0) for log in logging_outputs)
                 tlm_sample_size = sum(log.get('tlm_sample_size', 0) for log in logging_outputs)
-                metrics.log_scalar('tlm_loss', tlm_loss_sum / tlm_sample_size / math.log(2), tlm_sample_size, round=3)
+                mean_tlm_loss = tlm_loss_sum / tlm_sample_size
+                metrics.log_scalar('tlm_loss', mean_tlm_loss / math.log(2), tlm_sample_size, round=3)
                 metrics.log_derived('tlm_ppl', lambda meters: utils.get_perplexity(meters['tlm_loss'].avg))
-                loss += tlm_loss_sum / tlm_sample_size / math.log(2)
+                loss += mean_tlm_loss / math.log(2)
                 sample_size += tlm_sample_size
 
             if "tcl_loss" in logging_outputs[0]:
                 tcl_loss_sum = sum(log.get('tcl_loss', 0) for log in logging_outputs)
                 tcl_sample_size = sum(log.get('tcl_sample_size', 0) for log in logging_outputs)
-                metrics.log_scalar('tcl_loss', tcl_loss_sum / tcl_sample_size / math.log(2), tcl_sample_size, round=3)
-                loss += tcl_loss_sum / tcl_sample_size / math.log(2)
+                mean_tcl_loss = tcl_loss_sum / tcl_sample_size
+                metrics.log_scalar('tcl_loss', mean_tcl_loss, tcl_sample_size, round=3)
+                loss += mean_tcl_loss
                 loss /= 2 if "tcl_loss" in logging_outputs[0] and "tlm_loss" in logging_outputs[0] else 1
                 sample_size += tcl_sample_size
             metrics.log_scalar('loss', loss, sample_size, round=3)
