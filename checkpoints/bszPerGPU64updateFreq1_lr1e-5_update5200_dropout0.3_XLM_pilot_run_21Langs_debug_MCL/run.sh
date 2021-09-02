@@ -2,8 +2,8 @@
 #SBATCH --output=slurm_logs/slurm-%A-%a.out
 #SBATCH --error=slurm_logs/slurm-%A-%a.err
 #SBATCH --partition=gpu
-#SBATCH --job-name=XLM_pilot_run_21Langs_debug
-#SBATCH --nodes=2
+#SBATCH --job-name=XLM_pilot_run_21Langs
+#SBATCH --nodes=4
 #SBATCH --ntasks-per-node=2
 #SBATCH --mem=164g
 #SBATCH --gres=gpu:v100:2
@@ -46,20 +46,20 @@ PROJ_DIR=/home1/zliu9986/fairseq-apollo
 SAVE_ROOT=${PROJ_DIR}/checkpoints
 DATA=${PROJ_DIR}/data-bin/XLM_pilot_run_21Langs_debug
 lr=1e-5
-max_sentences=4
+max_sentences=8
 update_freq=1
-world_size=2
+world_size=8
 num_update=5200
-dropout=0.1
+dropout=0.3
 base_exp="XLM_pilot_run_21Langs_debug_MCL"
-exp_name="bszPerGPU$((max_sentences * world_size))_updateFreq${update_freq}_lr${lr}_update${num_update}_dropout${dropout}_${base_exp}"
+exp_name="bszPerGPU$((max_sentences * world_size))updateFreq${update_freq}_lr${lr}_update${num_update}_dropout${dropout}_${base_exp}"
 echo $exp_name
 SAVE=${SAVE_ROOT}/${exp_name}
 mkdir -p ${SAVE}
 cp $0 ${SAVE}/run.sh
 
 srun --label python fairseq_cli/train.py --data ${DATA} \
-    --langs en:zh-Hans \
+    --langs en:ar:bg:bn:de:el:es:fi:fr:hi:id:ja:ko:ru:sw:te:th:tr:ur:vi:zh-Hans \
     --lang-pairs ar-en:bg-en:de-en:el-en:en-es:en-fr:en-hi:en-ru:en-sw:en-th:en-tr:en-ur:en-vi:en-zh \
     --task xlm_xcl \
     --arch xlmr_xcl_base \
@@ -75,18 +75,17 @@ srun --label python fairseq_cli/train.py --data ${DATA} \
     --seed 42 \
     --max-update ${num_update} \
     --update-freq ${update_freq} \
-    --distributed-port 3154 \
-    --distributed-world-size $world_size \
     --save-dir ${SAVE} \
     --log-interval 20 \
     --log-format json \
     --tensorboard-logdir logs/${exp_name} \
     --restore-file data/xlmr.base/model.pt \
+    --distributed-port 3154 \
+    --distributed-world-size $world_size \
     --ddp-backend=no_c10d \
     --dropout $dropout \
     --use-mono-data \
     --use-mcl
-    # --langs en:ar:bg:bn:de:el:es:fi:fr:hi:id:ja:ko:ru:sw:te:th:tr:ur:vi:zh-Hans \
     # --use-para-data \
     # --use-tcl \
     # --use-tlm 

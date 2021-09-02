@@ -177,13 +177,19 @@ class XlmXclLoss(FairseqCriterion):
             rank = dist.get_rank()
             x_list[rank] = sentence_rep_x
             z_list[rank] = sentence_rep_z
+            print(f"rank{rank} -- sentence_rep_x.shape: {sentence_rep_x.shape}")
+            print(f"rank{rank} -- sentence_rep_x.sum(dim=-1): {sentence_rep_x.sum(dim=-1)}")
+            print(f"rank{rank} -- sentence_rep_z.shape: {sentence_rep_z.shape}")
+            print(f"rank{rank} -- sentence_rep_z.sum(dim=-1): {sentence_rep_z.sum(dim=-1)}")
             # Get full batch embeddings: (batch_size x num_workers, hidden)
             # get all
             sentence_rep_x = torch.cat(x_list, 0)
-                sentence_rep_z = torch.cat(z_list, 0)
-            bp()
-            # print(sentence_rep_x.shape)
+            sentence_rep_z = torch.cat(z_list, 0)
+            # bp()
         # (batch_size*num_workers x batch_size*num_workers)
+        # print()
+        print(f"rank{rank} after cat -- sentence_rep_x.shape: {sentence_rep_x.shape}")
+        print(f"rank{rank} after cat -- sentence_rep_x.sum(dim=-1): {sentence_rep_x.sum(dim=-1)}")
         cos_sim = sim_metric(sentence_rep_x.unsqueeze(1), sentence_rep_z.unsqueeze(0))
         labels = torch.arange(cos_sim.size(0)).long()
         # TODO(Leo): find the right chunk for each worker on cos_sim and labels
@@ -209,7 +215,7 @@ class XlmXclLoss(FairseqCriterion):
             f'{log_prefix}_sim_negative_std': torch.std(similarities_with_negative, dim=-1)
         }
         return logging_output
-    
+
     def mcl_forward(self, model, sample, reduce=True):
         assert hasattr(model, "encoder")
         assert hasattr(model.encoder, "extract_features"), "Require model to have feature extractor"
