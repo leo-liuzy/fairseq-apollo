@@ -180,7 +180,8 @@ class XlmXclLoss(FairseqCriterion):
             # Get full batch embeddings: (batch_size x num_workers, hidden)
             # get all
             sentence_rep_x = torch.cat(x_list, 0)
-            sentence_rep_z = torch.cat(z_list, 0)
+                sentence_rep_z = torch.cat(z_list, 0)
+            bp()
             # print(sentence_rep_x.shape)
         # (batch_size*num_workers x batch_size*num_workers)
         cos_sim = sim_metric(sentence_rep_x.unsqueeze(1), sentence_rep_z.unsqueeze(0))
