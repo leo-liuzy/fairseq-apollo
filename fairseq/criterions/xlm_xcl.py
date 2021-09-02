@@ -153,7 +153,7 @@ class XlmXclLoss(FairseqCriterion):
 
         return self._xlm_forward(model, tlm_sample, 'tlm', reduce)
 
-    def _calculate_cl(self, sentence_rep_x, sentence_rep_z):
+    def _calculate_cl(self, sentence_rep_x, sentence_rep_z, sim_metric):
         """
         Calculate the contrastive loss, given
             sentence_rep_x --- the regular sentence representations from the encoder
@@ -183,7 +183,7 @@ class XlmXclLoss(FairseqCriterion):
             sentence_rep_z = torch.cat(z_list, 0)
             # print(sentence_rep_x.shape)
         # (batch_size*num_workers x batch_size*num_workers)
-        cos_sim = self.mcl_similarity_metric(sentence_rep_x.unsqueeze(1), sentence_rep_z.unsqueeze(0))
+        cos_sim = sim_metric(sentence_rep_x.unsqueeze(1), sentence_rep_z.unsqueeze(0))
         labels = torch.arange(cos_sim.size(0)).long()
         # TODO(Leo): find the right chunk for each worker on cos_sim and labels
         cos_sim = cos_sim[rank*batch_size:(rank + 1)*batch_size]
@@ -192,8 +192,26 @@ class XlmXclLoss(FairseqCriterion):
         # print(f"Cur lower: {rank*batch_size}, Cur upper: {(rank + 1)*batch_size}")
         return cos_sim, labels
 
+    def _get_cl_logs(self, log_prefix, loss, sample, sample_size, cos_sim=None):
+
+        logging_output = {
+            f'{log_prefix}_loss': loss if self.tpu else loss.data,
+            f'{log_prefix}_ntokens': sample['ntokens'],
+            f'{log_prefix}_nsentences': sample['nsentences'],
+            f'{log_prefix}_sample_size': sample_size,
+        }
+        if cos_sim is not None:
+            similarities_with_positive = cos_sim.diag()
+            assert len(similarities_with_positive.shape) == 1
+            mask = torch.ones_like(cos_sim).fill_diagonal_(0)
+            similarities_with_negative = torch.masked_select(cos_sim, mask.bool()).view(sample_size, -1)
+            logging_output[f'{log_prefix}_sim_positive_mean'] = torch.mean(similarities_with_positive)
+            logging_output[f'{log_prefix}_sim_negative_mean'] = torch.mean(similarities_with_negative, dim=-1)
+            logging_output[f'{log_prefix}_sim_negative_std'] = torch.std(similarities_with_negative, dim=-1)
+
+        return logging_output
     def mcl_forward(self, model, sample, reduce=True):
-        log_prefix = "mcl"
+
         assert hasattr(model, "encoder")
         assert hasattr(model.encoder, "extract_features"), "Require model to have feature extractor"
         assert hasattr(model, "pooler"), "Require model to have pooler for sentence representation"
@@ -213,23 +231,25 @@ class XlmXclLoss(FairseqCriterion):
                                               force_positions=True,
                                               return_all_hiddens=True)
         sentence_rep_z = model.pooler(attn_mask, z_extra['inner_states'])
-        cos_sim, labels = self._calculate_cl(sentence_rep_x, sentence_rep_z)
+        cos_sim, labels = self._calculate_cl(sentence_rep_x, sentence_rep_z, self.mcl_similarity_metric)
+        debug_data = torch.zeros(sample_size, sample_size)
+        # for i in range(sample_size):
+        #     for j in range(sample_size):
+        #         debug_data[i, j] = self.mcl_similarity_metric(sentence_rep_x[i], sentence_rep_z[j])
         labels = labels.to(model.encoder.sentence_encoder.embed_tokens.weight.device)
         # print(f"cos_sim shape: {cos_sim.shape}")
         # print(f"labels: {labels}")
         loss_fct = nn.CrossEntropyLoss()
         mcl_loss = loss_fct(cos_sim, labels)
-        logging_output = {
-            f'{log_prefix}_loss': mcl_loss if self.tpu else mcl_loss.data,
-            f'{log_prefix}_ntokens': sample['ntokens'],
-            f'{log_prefix}_nsentences': sample['nsentences'],
-            f'{log_prefix}_sample_size': sample_size,
-        }
+        logging_output = self._get_cl_logs(log_prefix="mcl",
+                                           loss=mcl_loss,
+                                           sample=sample,
+                                           sample_size=sample_size,
+                                           cos_sim=cos_sim)
 
-        return mcl_loss, sample_size, logging_output
+        return mcl_loss, sample_size, logging_output, logging_output
 
     def tcl_forward(self, model, sample, reduce=True):
-        log_prefix = "tcl"
         assert hasattr(model, "encoder")
         assert hasattr(model.encoder, "extract_features"), "Require model to have feature extractor"
         assert hasattr(model, "pooler"), "Require model to have pooler for sentence representation"
@@ -248,16 +268,15 @@ class XlmXclLoss(FairseqCriterion):
                                               force_positions=True,
                                               return_all_hiddens=True)
         sentence_rep_z = model.pooler(z_attn_mask, z_extra['inner_states'])
-        cos_sim, labels = self._calculate_cl(sentence_rep_x, sentence_rep_z)
+        cos_sim, labels = self._calculate_cl(sentence_rep_x, sentence_rep_z, self.tcl_similarity_metric)
         labels = labels.to(model.encoder.sentence_encoder.embed_tokens.weight.device)
         loss_fct = nn.CrossEntropyLoss()
         tcl_loss = loss_fct(cos_sim, labels)
-        logging_output = {
-            f'{log_prefix}_loss': tcl_loss if self.tpu else tcl_loss.data,
-            f'{log_prefix}_ntokens': sample['ntokens'],
-            f'{log_prefix}_nsentences': sample['nsentences'],
-            f'{log_prefix}_sample_size': sample_size,
-        }
+        logging_output = self._get_cl_logs(log_prefix="tcl",
+                                           loss=tcl_loss,
+                                           sample=sample,
+                                           sample_size=sample_size,
+                                           cos_sim=cos_sim)
 
         return tcl_loss, sample_size, logging_output
 
